@@ -20,13 +20,11 @@ test.describe("Accesibilidad y Estructura Semántica", () => {
     await page.goto("/contacto");
 
     const fields = [
-      { id: "lead-nombre", label: /Nombre completo/i },
-      { id: "lead-empresa", label: /Empresa u organización/i },
-      { id: "lead-cargo", label: /Cargo o rol/i },
-      { id: "lead-rubro", label: /Rubro de la empresa/i },
+      { id: "lead-nombre", label: /Nombre/i },
+      { id: "lead-empresa", label: /Empresa/i },
+      { id: "lead-cargo", label: /Cargo/i },
       { id: "lead-tamano", label: /Tamaño del equipo/i },
-      { id: "lead-linea", label: /Línea de interés principal/i },
-      { id: "lead-mensaje", label: /Cuéntanos la situación/i },
+      { id: "lead-mensaje", label: /¿Qué software tienen/i },
     ];
 
     for (const field of fields) {
@@ -37,15 +35,5 @@ test.describe("Accesibilidad y Estructura Semántica", () => {
       await expect(label).toBeVisible();
       await expect(label).toHaveText(field.label);
     }
-  });
-
-  test("El diagrama del marco sistémico cuenta con descripción accesible", async ({ page }) => {
-    await page.goto("/");
-
-    const diagram = page.locator('svg[role="img"]');
-    await expect(diagram).toBeVisible();
-    const ariaLabel = await diagram.getAttribute("aria-label");
-    expect(ariaLabel).toBeTruthy();
-    expect(ariaLabel?.toLowerCase()).toContain("diagrama");
   });
 });

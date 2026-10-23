@@ -1,275 +1,395 @@
 import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
-import { Calendar, ArrowRight, CheckCircle2, Shield, GitBranch, Cpu, Users } from "lucide-react";
-import { LineCard } from "@/components/LineCard";
-import { DiagramSystem } from "@/components/DiagramSystem";
-import { CtaSection } from "@/components/CtaSection";
+import { ArrowRight, CheckCircle2, XCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Inicio | Vórtice Integration SpA",
+  title: "Inicio | Vórtice Integration",
   description:
-    "La mayoría de las fallas no son técnicas: están en cómo las personas y los sistemas se encuentran. Descubre el marco Vórtice y nuestras líneas de servicio en Chile.",
+    "Tu software sale sin QA. Te ayudamos a ponerlo en marcha. Para empresas medianas que quieren dejar de probar a última hora. Empiezas con un levantamiento de 30 minutos, gratuito y sin compromiso.",
   openGraph: {
-    title: "Vórtice Integration SpA | Inicio",
+    title: "Vórtice Integration | Puesta en Marcha de QA",
     description:
-      "La mayoría de las fallas no son técnicas: están en cómo las personas y los sistemas se encuentran.",
+      "Tu software sale sin QA. Te ayudamos a ponerlo en marcha. Levantamiento de 30 minutos, gratuito y sin compromiso.",
   },
 };
 
 export default function HomePage() {
   return (
-    <div className="space-y-16 lg:space-y-24 py-8 sm:py-12">
-      {/* 1. HERO SECTION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-vortice-100 text-vortice-900 text-xs font-semibold uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-              <span>Vórtice Integration SpA &bull; Chile</span>
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.15]">
-              &ldquo;La mayoría de las fallas no son técnicas:{" "}
-              <span className="text-vortice-800 underline decoration-emerald-500/80 decoration-4 underline-offset-8">
-                están en cómo las personas y los sistemas se encuentran.
-              </span>
-              &rdquo;
-            </h1>
-
-            <p className="text-lg text-slate-700 leading-relaxed max-w-2xl">
-              Ayudamos a empresas y pymes a mirar lo que realmente traba sus operaciones y desarrollos. Conectamos la calidad del software con las dinámicas humanas de quienes lo construyen y usan, sin discursos corporativos vacíos.
-            </p>
-
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <Link
-                href="/diagnostico"
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-base font-semibold text-white bg-vortice-900 hover:bg-vortice-800 transition-colors shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-vortice-900 text-center"
-              >
-                <Calendar className="w-5 h-5 text-emerald-400" aria-hidden="true" />
-                <span>Agenda un diagnóstico de 45 minutos</span>
-              </Link>
-
-              <Link
-                href="/vortice"
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-base font-semibold text-slate-800 bg-white hover:bg-slate-100 transition-colors border border-slate-300 focus:outline-none focus:ring-2 focus:ring-vortice-700 text-center"
-              >
-                <span>Conoce nuestro marco de trabajo</span>
-                <ArrowRight className="w-4 h-4 text-slate-500" aria-hidden="true" />
-              </Link>
-            </div>
-
-            <div className="pt-4 flex items-center gap-6 text-xs text-slate-600">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                Conversación directa
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                Sin venta forzada
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                Foco en problemas reales
-              </span>
-            </div>
+    <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-20">
+      {/* 1. HERO */}
+      <section className="pt-8 sm:pt-14 pb-4">
+        <div className="max-w-4xl space-y-6">
+          <div className="inline-flex items-center gap-2 bg-mint text-dark text-xs font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-tag">
+            <span>Levantamiento online y gratuito</span>
           </div>
 
-          <div className="lg:col-span-5 flex justify-center">
-            <DiagramSystem />
-          </div>
-        </div>
-      </section>
+          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl tracking-tight text-dark uppercase leading-tightest">
+            Tu software sale sin QA. <br />
+            Te ayudamos a ponerlo en marcha.
+          </h1>
 
-      {/* 2. BLOQUE: NUESTRAS LÍNEAS */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="lines-heading">
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <span className="text-xs uppercase font-semibold text-vortice-700 tracking-wider">
-            Estructura del Grupo
-          </span>
-          <h2 id="lines-heading" className="text-3xl font-extrabold text-slate-900 tracking-tight">
-            Nuestras líneas de acción
-          </h2>
-          <p className="text-base text-slate-600 leading-relaxed">
-            Abordamos los problemas operacionales desde la técnica, los acuerdos de equipo y el flujo integral del negocio.
+          <p className="text-lg sm:text-xl text-slate leading-relaxed max-w-2xl">
+            Para empresas medianas que quieren dejar de probar a última hora. Empiezas con un levantamiento de 30 minutos, gratuito y sin compromiso.
+          </p>
+
+          <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <Link
+              href="/levantamiento"
+              className="inline-flex items-center justify-center gap-2 bg-dark text-white text-base font-medium px-6 py-3.5 rounded-lg hover:bg-dark/90 transition-colors"
+            >
+              <span>Agendar levantamiento de 30 min</span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
+          </div>
+
+          <p className="text-xs text-smoke">
+            Online &bull; Gratis &bull; Sin compromiso
           </p>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Línea 1: QA y automatización -> qachile.cl */}
-          <LineCard
-            title="QA y automatización"
-            tagline="Aseguramiento de software y pruebas funcionales"
-            description="Línea especializada en testing manual, automatización de pruebas regresivas y control de calidad en ciclos de entrega continua. Este servicio se opera y comercializa a través de nuestra marca especializada QA Chile."
-            features={[
-              "Automatización de pruebas end-to-end",
-              "Testing funcional de plataformas web y móviles",
-              "Integración en pipelines de CI/CD",
-              "Reportabilidad objetiva de defectos",
-            ]}
-            href="https://qachile.cl"
-            isExternal={true}
-            ctaText="Ver servicios en qachile.cl"
-            badge="Marca de Servicio"
-            icon={<Cpu className="w-6 h-6 text-vortice-800" />}
-          />
+      {/* 2. ¿TE PASA ALGUNO DE ESTOS? */}
+      <section aria-labelledby="pain-points-heading" className="space-y-6">
+        <div className="space-y-1">
+          <span className="text-xs font-bold uppercase tracking-wider text-smoke block">
+            Problemas habituales
+          </span>
+          <h2
+            id="pain-points-heading"
+            className="font-display text-3xl sm:text-5xl text-dark tracking-tight uppercase leading-tightest"
+          >
+            ¿Te pasa alguno de estos?
+          </h2>
+        </div>
 
-          {/* Línea 2: Diagnóstico de madurez organizacional -> /diagnostico */}
-          <LineCard
-            title="Diagnóstico de madurez"
-            tagline="Mapeo de fricciones entre equipos y sistemas"
-            description="Una radiografía práctica de 45 minutos para identificar dónde se frena el trabajo: desajustes de comunicación, supuestos en el código, traspasos poco claros o procesos que la gente evade por burocráticos."
-            features={[
-              "Identificación de cuellos de botella invisibles",
-              "Evaluación del encuentro entre personas y tecnología",
-              "Informe de brechas y prioridades operativas",
-              "Ruta de acción clara para los siguientes 90 días",
-            ]}
-            href="/diagnostico"
-            isExternal={false}
-            ctaText="Solicitar diagnóstico"
-            badge="Marco Vórtice"
-            icon={<GitBranch className="w-6 h-6 text-vortice-800" />}
-          />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-32 p-6 sm:p-7 space-y-2 border border-ash/30">
+            <span className="font-display text-4xl text-dark block leading-none">01</span>
+            <p className="text-base text-dark font-medium leading-snug">
+              Los bugs aparecen en producción después de cada despliegue.
+            </p>
+          </div>
 
-          {/* Línea 3: Acompañamiento en transformación -> /acompanamiento */}
-          <LineCard
-            title="Acompañamiento en transformación"
-            tagline="Facilitación sistémica del cambio operacional"
-            description="Acompañamos a líderes y equipos técnicos en la adopción real de nuevas formas de trabajo. Sin recetas rígidas ni promesas mágicas: facilitamos acuerdos sostenibles y destrabamos la colaboración diaria."
-            features={[
-              "Alineación práctica de roles y expectativas",
-              "Destrabe de conversaciones difíciles en el equipo",
-              "Adopción cultural de buenas prácticas técnicas",
-              "Seguimiento cercano sin dependencia externa",
-            ]}
-            href="/acompanamiento"
-            isExternal={false}
-            ctaText="Conocer acompañamiento"
-            badge="Acompañamiento"
-            icon={<Users className="w-6 h-6 text-vortice-800" />}
-          />
+          <div className="bg-white rounded-32 p-6 sm:p-7 space-y-2 border border-ash/30">
+            <span className="font-display text-4xl text-dark block leading-none">02</span>
+            <p className="text-base text-dark font-medium leading-snug">
+              El desarrollador prueba a última hora y con prisa antes de entregar.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-32 p-6 sm:p-7 space-y-2 border border-ash/30">
+            <span className="font-display text-4xl text-dark block leading-none">03</span>
+            <p className="text-base text-dark font-medium leading-snug">
+              Nadie en el equipo sabe con certeza qué está probado y qué no.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* 3. BLOQUE DE ENFOQUE: 3 IDEAS MÁXIMO, SIN JERGA */}
-      <section className="bg-white border-y border-slate-200 py-16" aria-labelledby="approach-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center mb-12">
-            <span className="text-xs uppercase font-semibold text-vortice-700 tracking-wider">
-              En qué creemos
+      {/* 3. QUÉ HACEMOS (MÁXIMO 2 LÍNEAS POR TARJETA) */}
+      <section aria-labelledby="what-we-do-heading" className="space-y-6">
+        <div className="space-y-1">
+          <span className="text-xs font-bold uppercase tracking-wider text-smoke block">
+            Nuestra solución
+          </span>
+          <h2
+            id="what-we-do-heading"
+            className="font-display text-3xl sm:text-5xl text-dark tracking-tight uppercase leading-tightest"
+          >
+            Qué hacemos
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Tarjeta 1: Lineamientos */}
+          <div className="bg-white rounded-32 p-6 sm:p-7 space-y-3 border border-ash/30 flex flex-col justify-between">
+            <div className="space-y-2">
+              <span className="inline-block bg-canvas text-dark text-xs font-semibold uppercase px-2.5 py-1 rounded-tag">
+                Fase 1
+              </span>
+              <h3 className="font-display text-3xl text-dark tracking-tight uppercase leading-none">
+                Lineamientos
+              </h3>
+              <p className="text-sm text-slate leading-relaxed">
+                Definimos qué se prueba, cuándo y con qué criterios de aceptación antes de cada paso a producción.
+              </p>
+            </div>
+          </div>
+
+          {/* Tarjeta 2: Automatización */}
+          <div className="bg-white rounded-32 p-6 sm:p-7 space-y-3 border border-ash/30 flex flex-col justify-between">
+            <div className="space-y-2">
+              <span className="inline-block bg-canvas text-dark text-xs font-semibold uppercase px-2.5 py-1 rounded-tag">
+                Fase 2
+              </span>
+              <h3 className="font-display text-3xl text-dark tracking-tight uppercase leading-none">
+                Automatización
+              </h3>
+              <p className="text-sm text-slate leading-relaxed">
+                Automatizamos los flujos críticos de tu software e integramos las pruebas en tu pipeline de CI.
+              </p>
+            </div>
+          </div>
+
+          {/* Tarjeta 3: Soporte */}
+          <div className="bg-white rounded-32 p-6 sm:p-7 space-y-3 border border-ash/30 flex flex-col justify-between">
+            <div className="space-y-2">
+              <span className="inline-block bg-canvas text-dark text-xs font-semibold uppercase px-2.5 py-1 rounded-tag">
+                Continuidad
+              </span>
+              <h3 className="font-display text-3xl text-dark tracking-tight uppercase leading-none">
+                Soporte
+              </h3>
+              <p className="text-sm text-slate leading-relaxed">
+                20 horas mensuales de apoyo técnico para mantener pruebas, revisar cobertura y asistir en despliegues.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. CÓMO FUNCIONA */}
+      <section aria-labelledby="how-it-works-heading" className="space-y-6">
+        <div className="space-y-1">
+          <span className="text-xs font-bold uppercase tracking-wider text-smoke block">
+            Paso a paso
+          </span>
+          <h2
+            id="how-it-works-heading"
+            className="font-display text-3xl sm:text-5xl text-dark tracking-tight uppercase leading-tightest"
+          >
+            Cómo funciona
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-32 p-6 sm:p-7 space-y-3 border border-ash/30">
+            <span className="w-10 h-10 rounded-full bg-dark text-white flex items-center justify-center font-display text-xl leading-none">
+              1
             </span>
-            <h2 id="approach-heading" className="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-              Nuestro enfoque en tres ideas simples
-            </h2>
-            <p className="text-slate-600 text-sm mt-2">
-              Sin metodologías de moda ni palabras rebuscadas. Lo que hemos comprobado en años de operación real:
+            <h3 className="font-display text-2xl text-dark tracking-tight uppercase">
+              Agendas
+            </h3>
+            <p className="text-sm text-slate leading-relaxed">
+              Coordinas una videollamada de 30 minutos directamente en nuestro calendario online.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-vortice-900 text-white font-bold flex items-center justify-center text-lg">
-                1
-              </div>
-              <h3 className="text-lg font-bold text-slate-900">
-                Los errores casi nunca nacen en el código
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Cuando un sistema falla en producción, casi siempre venía de un requerimiento ambiguo, un silencio en una reunión de planificación o una fecha límite fijada sin mirar la capacidad real del equipo. Resolver el código sin tocar la dinámica solo posterga el siguiente fallo.
-              </p>
-            </div>
+          <div className="bg-white rounded-32 p-6 sm:p-7 space-y-3 border border-ash/30">
+            <span className="w-10 h-10 rounded-full bg-dark text-white flex items-center justify-center font-display text-xl leading-none">
+              2
+            </span>
+            <h3 className="font-display text-2xl text-dark tracking-tight uppercase">
+              Recibes el informe
+            </h3>
+            <p className="text-sm text-slate leading-relaxed">
+              En 24 horas hábiles te enviamos un documento de 1 a 2 páginas con el diagnóstico actual y los primeros pasos.
+            </p>
+          </div>
 
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-vortice-900 text-white font-bold flex items-center justify-center text-lg">
-                2
-              </div>
-              <h3 className="text-lg font-bold text-slate-900">
-                Automatizar el caos solo lo hace más rápido
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Comprar herramientas caras o agregar suites de tests automáticos sobre un flujo desordenado genera frustración y costos innecesarios. Primero ordenamos los criterios, aclaramos responsabilidades y recién entonces la técnica multiplica el valor.
-              </p>
-            </div>
-
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-vortice-900 text-white font-bold flex items-center justify-center text-lg">
-                3
-              </div>
-              <h3 className="text-lg font-bold text-slate-900">
-                Mirar el sistema completo evita parches eternos
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Un equipo no funciona por partes aisladas. El área comercial, el equipo de desarrollo, operaciones y los usuarios finales forman una red viva. Si no se observa cómo interactúan todos ellos, se termina parchando el síntoma y la herida sigue abierta.
-              </p>
-            </div>
+          <div className="bg-white rounded-32 p-6 sm:p-7 space-y-3 border border-ash/30">
+            <span className="w-10 h-10 rounded-full bg-dark text-white flex items-center justify-center font-display text-xl leading-none">
+              3
+            </span>
+            <h3 className="font-display text-2xl text-dark tracking-tight uppercase">
+              Decides si avanzamos
+            </h3>
+            <p className="text-sm text-slate leading-relaxed">
+              Tú decides si quieres poner en marcha el área con nosotros o implementarlo por tu cuenta. Sin presiones.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* 4. BLOQUE DE CASOS Y POLÍTICA DE CONFIDENCIALIDAD */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="cases-heading">
-        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-sm">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vortice-100 text-vortice-900 text-xs font-semibold uppercase tracking-wider">
-              <Shield className="w-4 h-4 text-emerald-600" aria-hidden="true" />
-              <span>Confidencialidad y Experiencia de Campo</span>
+      {/* 5. PRECIOS */}
+      <section aria-labelledby="pricing-heading" className="space-y-6">
+        <div className="space-y-1">
+          <span className="text-xs font-bold uppercase tracking-wider text-smoke block">
+            Inversión transparente
+          </span>
+          <h2
+            id="pricing-heading"
+            className="font-display text-3xl sm:text-5xl text-dark tracking-tight uppercase leading-tightest"
+          >
+            Precios
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Tarjeta 1: Levantamiento */}
+          <div className="bg-white rounded-32 p-6 sm:p-8 space-y-5 border border-ash/30 flex flex-col justify-between">
+            <div className="space-y-3">
+              <span className="bg-mint text-dark text-xs font-bold uppercase px-3 py-1 rounded-tag inline-block">
+                Primer paso
+              </span>
+              <h3 className="font-display text-3xl text-dark tracking-tight uppercase leading-none">
+                Levantamiento QA
+              </h3>
+              <div className="pt-2">
+                <span className="text-4xl font-extrabold text-dark tracking-tight">$0 USD</span>
+                <span className="text-xs text-smoke block mt-1">Gratuito · 30 minutos</span>
+              </div>
+              <ul className="text-xs text-slate space-y-2 pt-2 border-t border-canvas">
+                <li>&bull; Sesión online de 30 minutos</li>
+                <li>&bull; Revisión de cómo prueban hoy</li>
+                <li>&bull; Informe escrito de 1 a 2 páginas</li>
+              </ul>
             </div>
-
-            <h2 id="cases-heading" className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              Casos de estudio y experiencias de campo
-            </h2>
-
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
-              En Vórtice operamos bajo estrictos acuerdos de confidencialidad (NDA) con organizaciones de misión crítica en industrias como HealthTech, FinTech y servicios esenciales. Por respeto a nuestros clientes, no publicamos logos comerciales ni métricas ficticias con fines publicitarios.
-            </p>
+            <Link
+              href="/levantamiento"
+              className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-lg bg-dark text-white text-sm font-medium hover:bg-dark/90 transition-colors"
+            >
+              Agendar gratis
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-5xl mx-auto">
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 space-y-2">
-              <h3 className="font-bold text-slate-900 text-sm">
-                Creación de áreas de QA desde cero
+          {/* Tarjeta 2: Puesta en marcha */}
+          <div className="bg-white rounded-32 p-6 sm:p-8 space-y-5 border-2 border-dark flex flex-col justify-between">
+            <div className="space-y-3">
+              <span className="bg-dark text-white text-xs font-bold uppercase px-3 py-1 rounded-tag inline-block">
+                Implementación
+              </span>
+              <h3 className="font-display text-3xl text-dark tracking-tight uppercase leading-none">
+                Puesta en marcha QA
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Estructuración de procesos de testing, diseño de roles y escalamiento de células técnicas desde 2 hasta 10 especialistas con trazabilidad total.
-              </p>
+              <div className="pt-2">
+                <span className="text-xs uppercase text-smoke block">Desde</span>
+                <span className="text-4xl font-extrabold text-dark tracking-tight">4.000 USD</span>
+                <span className="text-xs text-smoke block mt-1">+ IVA (Pymes desde 3.400 USD + IVA)</span>
+              </div>
+              <ul className="text-xs text-slate space-y-2 pt-2 border-t border-canvas">
+                <li>&bull; Plazo: 10 días hábiles</li>
+                <li>&bull; Lineamientos y plan de regresión</li>
+                <li>&bull; Automatización de flujos críticos</li>
+                <li>&bull; Integración en pipeline de CI</li>
+              </ul>
             </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 space-y-2">
-              <h3 className="font-bold text-slate-900 text-sm">
-                Protocolos Go/No-Go y mitigación de riesgo
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Matrices de prueba E2E y acuerdos de entrega previa a producción que reducen incidentes graves y evitan despliegues de fin de semana con desgaste.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 space-y-2">
-              <h3 className="font-bold text-slate-900 text-sm">
-                Integración sistémica TI y Operaciones
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Marcos de trabajo donde comités de dirección, ingeniería y áreas usuarias toman decisiones compartidas con visibilidad técnica confiable.
-              </p>
-            </div>
+            <Link
+              href="/levantamiento"
+              className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-lg bg-dark text-white text-sm font-medium hover:bg-dark/90 transition-colors"
+            >
+              Iniciar con levantamiento
+            </Link>
           </div>
 
-          <div className="mt-8 text-center text-xs text-slate-500 max-w-xl mx-auto">
-            Las bitácoras detalladas y aprendizajes anonimizados se publicarán en este espacio conforme concluyan los ciclos activos de acompañamiento.
+          {/* Tarjeta 3: Soporte mensual */}
+          <div className="bg-white rounded-32 p-6 sm:p-8 space-y-5 border border-ash/30 flex flex-col justify-between">
+            <div className="space-y-3">
+              <span className="bg-canvas text-dark text-xs font-bold uppercase px-3 py-1 rounded-tag inline-block">
+                Continuidad
+              </span>
+              <h3 className="font-display text-3xl text-dark tracking-tight uppercase leading-none">
+                Soporte Mensual (20 hrs)
+              </h3>
+              <div className="pt-2">
+                <span className="text-xs uppercase text-smoke block">Desde</span>
+                <span className="text-4xl font-extrabold text-dark tracking-tight">1.000 USD</span>
+                <span className="text-xs text-smoke block mt-1">+ IVA al mes (Pymes desde 850 USD + IVA)</span>
+              </div>
+              <ul className="text-xs text-slate space-y-2 pt-2 border-t border-canvas">
+                <li>&bull; 20 horas mensuales dedicadas</li>
+                <li>&bull; Mantenimiento de pruebas automáticas</li>
+                <li>&bull; Revisión de cobertura de código</li>
+                <li>&bull; Apoyo técnico en despliegues</li>
+              </ul>
+            </div>
+            <Link
+              href="/levantamiento"
+              className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-lg bg-dark text-white text-sm font-medium hover:bg-dark/90 transition-colors"
+            >
+              Consultar disponibilidad
+            </Link>
+          </div>
+        </div>
+
+        <div className="text-center pt-2">
+          <span className="inline-block bg-mint px-4 py-1.5 rounded-tag text-xs font-semibold text-dark">
+            Precio especial para pymes.
+          </span>
+        </div>
+      </section>
+
+      {/* 6. PARA QUIÉN ES Y PARA QUIÉN NO */}
+      <section aria-labelledby="fit-heading" className="space-y-6">
+        <div className="space-y-1">
+          <span className="text-xs font-bold uppercase tracking-wider text-smoke block">
+            Criterios claros
+          </span>
+          <h2
+            id="fit-heading"
+            className="font-display text-3xl sm:text-5xl text-dark tracking-tight uppercase leading-tightest"
+          >
+            Para quién es y para quién no
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Para quién es */}
+          <div className="bg-white rounded-32 p-6 sm:p-8 space-y-4 border border-ash/30">
+            <div className="flex items-center gap-2 text-dark font-display text-2xl uppercase">
+              <CheckCircle2 className="w-5 h-5 text-dark" aria-hidden="true" />
+              <span>Para quién es</span>
+            </div>
+            <ul className="space-y-3 text-sm text-slate">
+              <li className="flex items-start gap-2">
+                <span className="text-dark font-bold">&bull;</span>
+                <span>Empresas medianas (aprox. 30 a 200 personas) con software en producción y sin área de QA.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-dark font-bold">&bull;</span>
+                <span>Equipos de desarrollo que pierden tiempo corrigiendo fallas repetitivas tras cada despliegue.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-dark font-bold">&bull;</span>
+                <span>CTOs y líderes que necesitan una base de pruebas ordenada y automatizada en CI en menos de un mes.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Para quién no es */}
+          <div className="bg-white rounded-32 p-6 sm:p-8 space-y-4 border border-ash/30">
+            <div className="flex items-center gap-2 text-dark font-display text-2xl uppercase">
+              <XCircle className="w-5 h-5 text-dark" aria-hidden="true" />
+              <span>Para quién no es</span>
+            </div>
+            <ul className="space-y-3 text-sm text-slate">
+              <li className="flex items-start gap-2">
+                <span className="text-dark font-bold">&bull;</span>
+                <span>Empresas que ya cuentan con un área propia de QA de más de 5 personas.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-dark font-bold">&bull;</span>
+                <span>Organizaciones que buscan pruebas masivas de carga y estrés (para eso recomendamos qachile.cl).</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-dark font-bold">&bull;</span>
+                <span>Venta de horas sueltas o "staff augmentation" para parchar equipos saturados sin estructurar procesos.</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* 5. CTA FINAL */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <CtaSection
-          title="¿Conversamos 45 minutos sobre tu operación?"
-          description="Sin presentaciones comerciales prefabricadas. Revisamos juntos dónde están ocurriendo los desacoples en tu equipo y qué caminos concretos tienen sentido para tu empresa."
-          primaryButtonText="Agenda un diagnóstico de 45 minutos"
-          primaryButtonHref="/diagnostico"
-          secondaryButtonText="Escríbenos una consulta"
-          secondaryButtonHref="/contacto"
-        />
+      {/* 7. CTA FINAL EN BLOQUE NEGRO */}
+      <section className="bg-dark text-white rounded-32 p-8 sm:p-12 lg:p-16 text-center space-y-6">
+        <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white uppercase leading-tightest max-w-3xl mx-auto">
+          Agenda tu levantamiento de 30 minutos.
+        </h2>
+
+        <p className="text-smoke text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+          Sesión online, gratuita y sin compromiso comercial. Te entregamos un informe claro para ordenar las pruebas de tu software.
+        </p>
+
+        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/levantamiento"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-dark text-base font-semibold px-6 py-3.5 rounded-lg hover:bg-white/90 transition-colors"
+          >
+            <span>Agendar levantamiento gratuito</span>
+            <ArrowRight className="w-4 h-4 text-dark" aria-hidden="true" />
+          </Link>
+        </div>
       </section>
     </div>
   );

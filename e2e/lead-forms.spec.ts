@@ -1,25 +1,23 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("Formularios de Lead y Endpoint de API", () => {
-  test("Envío exitoso del formulario de Diagnóstico con mock de backend", async ({ page }) => {
-    // Interceptar la llamada a /api/leads para simular respuesta exitosa de Supabase + n8n
+test.describe("Formularios de Levantamiento y Endpoint de API", () => {
+  test("Envío exitoso del formulario de Levantamiento con mock de backend", async ({ page }) => {
+    // Interceptar la llamada a /api/leads
     await page.route("**/api/leads", async (route) => {
       const postData = route.request().postDataJSON();
 
-      expect(postData.nombre).toBe("Valentina Morales");
-      expect(postData.empresa).toBe("Empresa Prueba SpA");
-      expect(postData.cargo).toBe("Líder de Desarrollo");
-      expect(postData.rubro).toBe("Tecnología / Software");
-      expect(postData.tamano_empresa).toBe("11 a 50 personas");
-      expect(postData.linea_interes).toBe("Diagnóstico de madurez organizacional");
-      expect(postData.mensaje).toContain("Retrasos frecuentes en las entregas");
+      expect(postData.nombre).toBe("Carlos Medina");
+      expect(postData.empresa).toBe("Empresa Tech SpA");
+      expect(postData.cargo).toBe("CTO");
+      expect(postData.tamano_empresa).toBe("11 a 50");
+      expect(postData.mensaje).toContain("Plataforma SaaS web");
 
       await route.fulfill({
         status: 201,
         contentType: "application/json",
         body: JSON.stringify({
           success: true,
-          message: "Solicitud registrada con éxito.",
+          message: "Te respondemos en menos de 24 horas hábiles.",
           data: {
             id: "lead-test-12345",
             ...postData,
@@ -29,30 +27,26 @@ test.describe("Formularios de Lead y Endpoint de API", () => {
       });
     });
 
-    await page.goto("/diagnostico");
+    await page.goto("/levantamiento");
 
     // Llenar campos
-    await page.fill("#lead-nombre", "Valentina Morales");
-    await page.fill("#lead-empresa", "Empresa Prueba SpA");
-    await page.fill("#lead-cargo", "Líder de Desarrollo");
-    await page.selectOption("#lead-rubro", "Tecnología / Software");
-    await page.selectOption("#lead-tamano", "11 a 50 personas");
+    await page.fill("#lead-nombre", "Carlos Medina");
+    await page.fill("#lead-empresa", "Empresa Tech SpA");
+    await page.fill("#lead-cargo", "CTO");
+    await page.selectOption("#lead-tamano", "11 a 50");
     await page.fill(
       "#lead-mensaje",
-      "Retrasos frecuentes en las entregas y falta de pruebas automatizadas."
+      "Plataforma SaaS web con despliegues semanales. Actualmente probamos manualmente a última hora."
     );
 
     // Enviar
     await page.click('button[type="submit"]');
 
-    // Verificar mensaje de confirmación
+    // Verificar mensaje de confirmación y Google Calendar
     await expect(page.getByRole("status")).toBeVisible();
-    await expect(page.getByText(/¡Solicitud recibida correctamente!/i)).toBeVisible();
-    await expect(page.getByText(/Empresa Prueba SpA/i)).toBeVisible();
-
-    // Verificar opción de calendario tras envío
-    await expect(page.getByText(/Paso optativo inmediato/i)).toBeVisible();
-    await expect(page.getByText(/Abrir agenda de disponibilidad/i)).toBeVisible();
+    await expect(page.getByText(/Solicitud Recibida/i)).toBeVisible();
+    await expect(page.getByText(/Te respondemos en menos de 24 horas hábiles/i)).toBeVisible();
+    await expect(page.getByRole("link", { name: /Abrir agenda de disponibilidad/i })).toBeVisible();
   });
 
   test("Validación de campos obligatorios en formulario de Contacto", async ({ page }) => {
@@ -65,7 +59,7 @@ test.describe("Formularios de Lead y Endpoint de API", () => {
     const alert = page.getByRole("alert").filter({ hasText: "No pudimos procesar la solicitud" });
     await expect(alert).toBeVisible();
     await expect(
-      page.getByText(/Por favor, completa todos los campos requeridos/i)
+      page.getByText(/Por favor, completa todos los campos antes de continuar/i)
     ).toBeVisible();
   });
 
@@ -73,7 +67,6 @@ test.describe("Formularios de Lead y Endpoint de API", () => {
     const response = await request.post("/api/leads", {
       data: {
         nombre: "Test Incompleto",
-        // Falta empresa, cargo, mensaje, etc.
       },
     });
 

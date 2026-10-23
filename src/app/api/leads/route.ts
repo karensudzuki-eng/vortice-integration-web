@@ -10,21 +10,19 @@ export async function POST(request: Request) {
       nombre,
       empresa,
       cargo,
-      rubro,
       tamano_empresa,
       mensaje,
+      rubro,
       linea_interes,
     } = body;
 
-    // Validación básica de campos obligatorios
+    // Validación de los campos obligatorios del nuevo formulario
     if (
       !nombre?.trim() ||
       !empresa?.trim() ||
       !cargo?.trim() ||
-      !rubro?.trim() ||
       !tamano_empresa?.trim() ||
-      !mensaje?.trim() ||
-      !linea_interes?.trim()
+      !mensaje?.trim()
     ) {
       return NextResponse.json(
         {
@@ -35,14 +33,14 @@ export async function POST(request: Request) {
       );
     }
 
-    const payload: LeadSubmission & { fecha: string } = {
+    const payload = {
       nombre: nombre.trim(),
       empresa: empresa.trim(),
       cargo: cargo.trim(),
-      rubro: rubro.trim(),
       tamano_empresa: tamano_empresa.trim(),
       mensaje: mensaje.trim(),
-      linea_interes: linea_interes.trim(),
+      rubro: rubro?.trim() || "Empresas medianas / TI",
+      linea_interes: linea_interes?.trim() || "Levantamiento QA (30 min)",
       fecha: new Date().toISOString(),
     };
 
@@ -72,11 +70,11 @@ export async function POST(request: Request) {
       }
     } else {
       console.warn(
-        "Supabase no está configurado (variables de entorno pendientes). Modo demostración local."
+        "Supabase en modo demostración local."
       );
     }
 
-    // Disparar Webhook a n8n para notificación de correo
+    // Webhook n8n
     const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL;
     if (
       n8nWebhookUrl &&
@@ -84,7 +82,7 @@ export async function POST(request: Request) {
       n8nWebhookUrl.startsWith("http")
     ) {
       try {
-        const webhookResponse = await fetch(n8nWebhookUrl, {
+        await fetch(n8nWebhookUrl, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -97,22 +95,15 @@ export async function POST(request: Request) {
             dispatchedAt: new Date().toISOString(),
           }),
         });
-
-        if (!webhookResponse.ok) {
-          console.error(
-            `El webhook de n8n respondió con estado: ${webhookResponse.status}`
-          );
-        }
       } catch (webhookError) {
-        // El fallo del webhook externo no debe abortar la confirmación al cliente
-        console.error("Error al enviar notificación al webhook de n8n:", webhookError);
+        console.error("Error al enviar notificación a n8n:", webhookError);
       }
     }
 
     return NextResponse.json(
       {
         success: true,
-        message: "Solicitud registrada con éxito. Nos pondremos en contacto a la brevedad.",
+        message: "Te respondemos en menos de 24 horas hábiles.",
         data: {
           id: savedLeadId,
           ...payload,

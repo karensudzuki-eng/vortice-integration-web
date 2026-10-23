@@ -1,23 +1,17 @@
-export type ServiceLine =
-  | "QA y automatización"
-  | "Diagnóstico de madurez organizacional"
-  | "Acompañamiento en transformación"
-  | "Consulta general";
-
-export type CompanySize =
-  | "1 a 10 personas"
-  | "11 a 50 personas"
-  | "51 a 200 personas"
-  | "Más de 200 personas";
+export type TeamSize =
+  | "Menos de 10"
+  | "11 a 50"
+  | "51 a 200"
+  | "Más de 200";
 
 export interface LeadSubmission {
   nombre: string;
   empresa: string;
   cargo: string;
-  rubro: string;
-  tamano_empresa: CompanySize | string;
-  mensaje: string;
-  linea_interes: ServiceLine | string;
+  tamano_empresa: TeamSize | string;
+  mensaje: string; // "¿Qué software tienen y cómo lo prueban hoy?"
+  rubro?: string;
+  linea_interes?: string;
   fecha?: string;
 }
 

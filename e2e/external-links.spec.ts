@@ -8,7 +8,7 @@ test.describe("Enlaces externos a qachile.cl", () => {
     const qaChileLinks = page.locator('a[href*="qachile.cl"]');
     const count = await qaChileLinks.count();
 
-    expect(count).toBeGreaterThanOrEqual(2); // Al menos Navbar y tarjeta/footer
+    expect(count).toBeGreaterThanOrEqual(1); // Enlace discreto a qachile.cl en footer
 
     for (let i = 0; i < count; i++) {
       const link = qaChileLinks.nth(i);

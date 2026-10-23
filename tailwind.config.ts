@@ -9,42 +9,36 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        vortice: {
-          50: "#F0F4F8",
-          100: "#D9E2EC",
-          200: "#BCCCDC",
-          300: "#9FB3C8",
-          400: "#829AB1",
-          500: "#627D98",
-          600: "#486581",
-          700: "#334E68",
-          800: "#243B53",
-          900: "#102A43",
-          950: "#0A1929",
+        canvas: "#e5e5e5",
+        card: "#ffffff",
+        dark: "#000000",
+        slate: {
+          DEFAULT: "#444444",
+          light: "#717171",
         },
-        accent: {
-          50: "#F0FDF4",
-          100: "#DCFCE7",
-          500: "#16A34A",
-          600: "#15803D",
-          700: "#166534",
+        smoke: "#979797",
+        ash: "#c6c6c6",
+        mint: {
+          DEFAULT: "#d1ffca",
+          hover: "#bbf7b1",
         },
-        copper: {
-          500: "#C05621",
-          600: "#9C4221",
-          700: "#7B341E",
-        }
+        voltage: "#fff100",
       },
       fontFamily: {
-        sans: [
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica Neue",
-          "Arial",
-          "sans-serif",
-        ],
+        display: ["var(--font-display)", "Bebas Neue", "Anton", "Impact", "sans-serif"],
+        sans: ["var(--font-sans)", "Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+      },
+      borderRadius: {
+        pill: "48px",
+        tag: "64px",
+        "28": "28px",
+        "32": "32px",
+      },
+      lineHeight: {
+        tightest: "0.9",
+      },
+      maxWidth: {
+        showroom: "1200px",
       },
     },
   },

@@ -1,195 +1,128 @@
 import React from "react";
 import Link from "next/link";
-import { ExternalLink, Mail, MapPin } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-vortice-950 text-slate-300 border-t border-vortice-800" role="contentinfo">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Columna 1: Identidad y propuesta */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-md bg-white text-vortice-950 flex items-center justify-center font-bold text-lg">
-                V
-              </div>
-              <span className="text-base font-bold text-white tracking-tight">
-                Vórtice Integration SpA
-              </span>
+    <footer className="w-full mt-20 pt-12 pb-16 border-t border-ash/50 bg-canvas text-slate">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start justify-between">
+          {/* Identidad */}
+          <div className="md:col-span-5 space-y-3">
+            <span className="font-display text-3xl tracking-tight text-dark block">
+              VÓRTICE INTEGRATION
+            </span>
+            <p className="text-sm text-slate leading-relaxed max-w-sm">
+              Puesta en marcha de áreas de calidad de software y automatización para empresas medianas y pymes en Chile.
+            </p>
+            <div className="pt-2 text-xs text-slate space-y-1">
+              <p>Razón Social: <span className="font-medium text-dark">Vórtice Integration Holding SpA</span></p>
+              <p>RUT: <span className="font-medium text-dark">78.377.882-3</span></p>
+              <p>Santiago de Chile</p>
             </div>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              &ldquo;La mayoría de las fallas no son técnicas: están en cómo las personas y los sistemas se encuentran.&rdquo;
-            </p>
-            <p className="text-xs text-slate-400">
-              Marco de trabajo para diagnóstico sistémico, calidad de software y transformación organizacional en Chile.
-            </p>
           </div>
 
-          {/* Columna 2: Navegación de páginas */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+          {/* Enlaces navegación */}
+          <div className="md:col-span-3 space-y-2 text-sm">
+            <span className="font-semibold text-xs uppercase tracking-wider text-dark block mb-3">
               Navegación
-            </h3>
-            <ul className="space-y-2.5 text-sm">
+            </span>
+            <ul className="space-y-2">
               <li>
-                <Link
-                  href="/"
-                  className="text-slate-300 hover:text-white transition-colors focus:outline-none focus:underline"
-                >
+                <Link href="/" className="hover:text-dark transition-colors">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/vortice"
-                  className="text-slate-300 hover:text-white transition-colors focus:outline-none focus:underline"
-                >
-                  Sobre el marco Vórtice
+                <Link href="/servicios" className="hover:text-dark transition-colors">
+                  Servicios
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/diagnostico"
-                  className="text-slate-300 hover:text-white transition-colors focus:outline-none focus:underline"
-                >
-                  Diagnóstico de madurez
+                <Link href="/precios" className="hover:text-dark transition-colors">
+                  Precios
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/acompanamiento"
-                  className="text-slate-300 hover:text-white transition-colors focus:outline-none focus:underline"
-                >
-                  Acompañamiento en transformación
+                <Link href="/levantamiento" className="hover:text-dark transition-colors">
+                  Levantamiento de 30 min
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/blog"
-                  className="text-slate-300 hover:text-white transition-colors focus:outline-none focus:underline"
-                >
-                  Blog y artículos (Fase 2)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contacto"
-                  className="text-slate-300 hover:text-white transition-colors focus:outline-none focus:underline"
-                >
+                <Link href="/contacto" className="hover:text-dark transition-colors">
                   Contacto
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Columna 3: Nuestras Líneas y Marcas */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
-              Líneas del Grupo
-            </h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a
-                  href="https://qachile.cl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors focus:outline-none focus:underline"
-                >
-                  <span>QA Chile (qachile.cl)</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
-                  <span className="sr-only">(se abre en una nueva pestaña)</span>
-                </a>
-                <p className="text-xs text-slate-400 mt-0.5">
-                  Marca de servicio para aseguramiento de calidad y pruebas automatizadas.
-                </p>
-              </li>
-              <li>
-                <Link
-                  href="/diagnostico"
-                  className="text-slate-300 hover:text-white transition-colors block focus:outline-none focus:underline"
-                >
-                  Diagnóstico de madurez organizacional
-                </Link>
-                <p className="text-xs text-slate-400 mt-0.5">
-                  Mapeo de fricciones entre equipos, procesos y herramientas.
-                </p>
-              </li>
-              <li>
-                <Link
-                  href="/acompanamiento"
-                  className="text-slate-300 hover:text-white transition-colors block focus:outline-none focus:underline"
-                >
-                  Acompañamiento en transformación
-                </Link>
-                <p className="text-xs text-slate-400 mt-0.5">
-                  Facilitación sistémica y destrabe operacional de equipos.
-                </p>
-              </li>
-            </ul>
-          </div>
+          {/* Canales directos y WhatsApp */}
+          <div className="md:col-span-4 space-y-4">
+            <span className="font-semibold text-xs uppercase tracking-wider text-dark block">
+              Contacto directo
+            </span>
 
-          {/* Columna 4: Datos Legales y Contacto */}
-          <div className="space-y-3">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
-              Información Legal y Contacto
-            </h3>
-            <div className="text-sm text-slate-300 space-y-2">
-              <p>
-                <strong className="text-white block font-medium">Razón Social:</strong>
-                Vórtice Integration Holding SpA
-              </p>
-              <p>
-                <strong className="text-white block font-medium">RUT:</strong>
-                <span className="text-slate-200 font-mono">78.377.882-3</span>
-              </p>
-              <p className="flex items-start gap-2 pt-1">
-                <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" aria-hidden="true" />
-                <span>Santiago, Chile</span>
-              </p>
-              <div className="space-y-1 pt-1">
-                <p className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-slate-400 shrink-0" aria-hidden="true" />
-                  <a
-                    href="mailto:contacto@vorticeintegration.com"
-                    className="text-slate-300 hover:text-white transition-colors focus:outline-none focus:underline text-xs"
-                  >
-                    contacto@vorticeintegration.com
-                  </a>
-                </p>
-                <p className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-slate-400 shrink-0" aria-hidden="true" />
-                  <a
-                    href="mailto:karen.sudzuki@vorticeintegration.com"
-                    className="text-slate-300 hover:text-white transition-colors focus:outline-none focus:underline text-xs"
-                  >
-                    karen.sudzuki@vorticeintegration.com
-                  </a>
-                </p>
-              </div>
-              <p className="pt-1">
-                <a
-                  href="https://wa.me/56941939361?text=Hola%20Karen,%20me%20gustar%C3%ADa%20conversar%20sobre%20un%20diagn%C3%B3stico%20en%20V%C3%B3rtice%20Integration"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+            {/* Email con acento amarillo #fff100 */}
+            <div>
+              <span className="text-xs text-smoke block mb-1">Correo:</span>
+              <a
+                href="mailto:contacto@vorticeintegration.com"
+                className="inline-block bg-voltage px-2.5 py-1 text-dark text-sm font-medium rounded hover:bg-voltage/90 transition-colors"
+              >
+                contacto@vorticeintegration.com
+              </a>
+            </div>
+
+            {/* WhatsApp solo ícono circular sin número escrito */}
+            <div>
+              <span className="text-xs text-smoke block mb-2">WhatsApp:</span>
+              <a
+                href="https://wa.me/56941939361?text=Hola%20V%C3%B3rtice%2C%20me%20gustar%C3%ADa%20agendar%20un%20levantamiento%20QA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-dark text-white flex items-center justify-center hover:bg-dark/80 transition-transform hover:scale-105 focus:outline-none"
+                aria-label="Contactar por WhatsApp"
+                title="Contactar por WhatsApp"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
                 >
-                  <span>WhatsApp: +56 9 4193 9361</span>
-                </a>
-              </p>
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+                <span className="sr-only">(abre WhatsApp en nueva pestaña)</span>
+              </a>
+            </div>
+
+            {/* Enlace discreto a qachile.cl */}
+            <div className="pt-2 text-xs text-smoke">
+              <a
+                href="https://qachile.cl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:text-dark transition-colors"
+              >
+                <span>Para pruebas de carga y estrés, revisa qachile.cl</span>
+                <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                <span className="sr-only">(se abre en una nueva pestaña)</span>
+              </a>
             </div>
           </div>
         </div>
 
         {/* Separador inferior */}
-        <div className="mt-12 pt-8 border-t border-vortice-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>
-            &copy; {currentYear} Vórtice Integration Holding SpA. Todos los derechos reservados.
-          </p>
-          <p className="text-slate-400">
-            Sitio institucional y marco metodológico de Vórtice Integration.
-          </p>
+        <div className="mt-12 pt-6 border-t border-ash/40 flex flex-col sm:flex-row items-center justify-between text-xs text-smoke gap-3">
+          <p>&copy; {currentYear} Vórtice Integration Holding SpA. Todos los derechos reservados.</p>
+          <p>Santiago de Chile</p>
         </div>
       </div>
     </footer>
