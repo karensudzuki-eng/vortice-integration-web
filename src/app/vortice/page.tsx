@@ -197,42 +197,89 @@ export default function VorticePage() {
         </div>
       </section>
 
-      {/* 6. BIOGRAFÍA BREVE (PLACEHOLDER) */}
+      {/* 6. BIOGRAFÍA DE LA FUNDADORA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="bio-heading">
         <div className="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-4 flex justify-center">
-              <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl bg-slate-100 border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-4 text-center text-slate-400">
-                <User className="w-16 h-16 text-slate-300 mb-2" aria-hidden="true" />
-                <span className="text-xs font-mono font-medium text-slate-500">
-                  [PLACEHOLDER: Foto profesional de la fundadora]
-                </span>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            <div className="md:col-span-4 flex flex-col items-center text-center">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-vortice-100 shadow-md mb-4 bg-slate-100">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/karen-sudzuki.png"
+                  alt="Karen Sudzuki Toro - Fundadora de Vórtice Integration"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <h3 className="text-xl font-bold text-slate-900">
+                Karen Sudzuki Toro
+              </h3>
+              <p className="text-sm font-medium text-vortice-700 mt-0.5">
+                Fundadora de Vórtice Integration
+              </p>
+              <p className="text-xs text-slate-500 mt-1">
+                Santiago, Chile
+              </p>
+
+              <div className="mt-4 pt-4 border-t border-slate-100 w-full space-y-2 text-xs text-slate-600">
+                <a
+                  href="mailto:karen.sudzuki@vorticeintegration.com"
+                  className="flex items-center justify-center gap-1.5 text-vortice-800 hover:text-vortice-950 font-medium"
+                >
+                  karen.sudzuki@vorticeintegration.com
+                </a>
+                <a
+                  href="https://calendar.app.google/8JfEzcRHRZGKMaHx9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-vortice-50 text-vortice-900 font-semibold hover:bg-vortice-100 transition-colors w-full"
+                >
+                  <span>Agendar 45 min con Karen</span>
+                  <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </a>
               </div>
             </div>
 
-            <div className="md:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold uppercase tracking-wider">
-                Liderazgo y Fundadora
+            <div className="md:col-span-8 space-y-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vortice-100 text-vortice-900 text-xs font-semibold uppercase tracking-wider">
+                Liderazgo y Trayectoria
               </div>
 
               <h2 id="bio-heading" className="text-2xl sm:text-3xl font-extrabold text-slate-900">
                 Detrás del marco Vórtice
               </h2>
 
-              <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
-                Con más de una década de experiencia en aseguramiento de calidad de software (QA), gestión de equipos técnicos y facilitación de transformaciones en Chile, la fundadora de Vórtice Integration SpA ha liderado proyectos críticos en diversas industrias, articulando la excelencia técnica con la mirada sistémica sobre las personas.
+              <p className="text-slate-700 text-base leading-relaxed">
+                Creo firmemente que la tecnología solo genera valor cuando los equipos y procesos que la sostienen están bien articulados. Llevo más de <strong>12 años liderando áreas de Calidad de Software (QA), Integración y Gobernanza TI</strong> en organizaciones de misión crítica (HealthTech, FinTech y sector público), donde la estrategia debe traducirse en ejecución estable y continuidad de negocio.
               </p>
 
-              <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-2 text-xs font-mono text-slate-600">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                  <span className="text-xs font-bold uppercase tracking-wider text-vortice-800">
+                    Formación Académica
+                  </span>
+                  <p className="text-xs text-slate-700 leading-relaxed font-medium">
+                    &bull; <strong>Ingeniería en Computación e Informática</strong> (Universidad Andrés Bello - UNAB).
+                  </p>
+                  <p className="text-xs text-slate-700 leading-relaxed font-medium">
+                    &bull; Especialización ejecutiva en <strong>Liderazgo por MIT Professional Education</strong>.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
+                    Especialidad Práctica
+                  </span>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    Creación de áreas de QA desde cero (caso FALP de 2 a 10 ingenieros), protocolos Go/No-Go y automatización moderna (Playwright, k6, n8n, Supabase y Docker).
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-2 text-sm text-slate-700 leading-relaxed">
                 <p>
-                  <strong>[PLACEHOLDER: Completar por la fundadora]</strong>
+                  A través de <strong>Vórtice Integration</strong> pongo a disposición de fundadores, gerencias de tecnología y líderes de operaciones un acompañamiento directo y diagnóstico sistémico: diseñamos marcos donde TI, Operaciones y Comités de Dirección toman decisiones con información confiable y sin fricciones destructivas.
                 </p>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Nombre completo y cargo formal de la fundadora.</li>
-                  <li>Trayectoria profesional específica (empresas, años de experiencia, hitos).</li>
-                  <li>Formación académica, certificaciones en calidad y enfoques sistémicos.</li>
-                  <li>Fotografía oficial en alta resolución con fondo neutro.</li>
-                </ul>
               </div>
             </div>
           </div>

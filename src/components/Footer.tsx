@@ -138,23 +138,44 @@ export function Footer() {
             <div className="text-sm text-slate-300 space-y-2">
               <p>
                 <strong className="text-white block font-medium">Razón Social:</strong>
-                Vórtice Integration SpA
+                Vórtice Integration Holding SpA
               </p>
               <p>
-                <strong className="text-white block font-medium">RUT de la empresa:</strong>
-                <span className="text-slate-400">[PLACEHOLDER: 77.XXX.XXX-X]</span>
+                <strong className="text-white block font-medium">RUT:</strong>
+                <span className="text-slate-200 font-mono">78.377.882-3</span>
               </p>
               <p className="flex items-start gap-2 pt-1">
                 <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" aria-hidden="true" />
-                <span>Santiago, Chile <span className="text-xs text-slate-400">[PLACEHOLDER: Ciudad / Comuna]</span></span>
+                <span>Santiago, Chile</span>
               </p>
-              <p className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-slate-400 shrink-0" aria-hidden="true" />
+              <div className="space-y-1 pt-1">
+                <p className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-slate-400 shrink-0" aria-hidden="true" />
+                  <a
+                    href="mailto:contacto@vorticeintegration.com"
+                    className="text-slate-300 hover:text-white transition-colors focus:outline-none focus:underline text-xs"
+                  >
+                    contacto@vorticeintegration.com
+                  </a>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-slate-400 shrink-0" aria-hidden="true" />
+                  <a
+                    href="mailto:karen.sudzuki@vorticeintegration.com"
+                    className="text-slate-300 hover:text-white transition-colors focus:outline-none focus:underline text-xs"
+                  >
+                    karen.sudzuki@vorticeintegration.com
+                  </a>
+                </p>
+              </div>
+              <p className="pt-1">
                 <a
-                  href="mailto:contacto@vorticeintegration.com"
-                  className="text-slate-300 hover:text-white transition-colors focus:outline-none focus:underline"
+                  href="https://wa.me/56941939361?text=Hola%20Karen,%20me%20gustar%C3%ADa%20conversar%20sobre%20un%20diagn%C3%B3stico%20en%20V%C3%B3rtice%20Integration"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
                 >
-                  contacto@vorticeintegration.com
+                  <span>WhatsApp: +56 9 4193 9361</span>
                 </a>
               </p>
             </div>
@@ -164,7 +185,7 @@ export function Footer() {
         {/* Separador inferior */}
         <div className="mt-12 pt-8 border-t border-vortice-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
           <p>
-            &copy; {currentYear} Vórtice Integration SpA. Todos los derechos reservados.
+            &copy; {currentYear} Vórtice Integration Holding SpA. Todos los derechos reservados.
           </p>
           <p className="text-slate-400">
             Sitio institucional y marco metodológico de Vórtice Integration.

@@ -1,11 +1,18 @@
-# Vórtice Integration SpA
+# Vórtice Integration Holding SpA
 
-Sitio institucional y plataforma de generación de leads calificados de **Vórtice Integration SpA**, marca madre de un grupo de servicios de calidad de software, transformación organizacional y diagnóstico sistémico para empresas y pymes en Chile.
+Sitio institucional y plataforma de generación de leads calificados de **Vórtice Integration Holding SpA**, marca madre de un grupo de servicios de calidad de software, transformación organizacional y diagnóstico sistémico para empresas y pymes en Chile.
 
 > **Propuesta de Valor Central:**  
 > *"La mayoría de las fallas no son técnicas: están en cómo las personas y los sistemas se encuentran."*
 
 El sitio presenta la empresa, su marco de trabajo y sus líneas de acción. **No vende servicios de QA directamente**: esos se canalizan a través de su marca de servicio [QA Chile (qachile.cl)](https://qachile.cl), la cual se enlaza en nueva pestaña en todas las secciones correspondientes.
+
+- **Razón Social:** Vórtice Integration Holding SpA
+- **RUT:** 78.377.882-3
+- **Fundadora y Dirección:** Karen Sudzuki Toro
+- **Correos:** `contacto@vorticeintegration.com` | `karen.sudzuki@vorticeintegration.com`
+- **WhatsApp:** `+56 9 4193 9361`
+- **Agenda Directa (Google Calendar):** [https://calendar.app.google/8JfEzcRHRZGKMaHx9](https://calendar.app.google/8JfEzcRHRZGKMaHx9)
 
 ---
 

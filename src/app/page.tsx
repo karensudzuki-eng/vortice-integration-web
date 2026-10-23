@@ -207,26 +207,55 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. BLOQUE DE CASOS (PLACEHOLDER TRANSPARENTE) */}
+      {/* 4. BLOQUE DE CASOS Y POLÍTICA DE CONFIDENCIALIDAD */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="cases-heading">
-        <div className="bg-slate-100/80 border border-slate-200 rounded-2xl p-8 sm:p-10">
+        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-sm">
           <div className="max-w-3xl mx-auto text-center space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200 text-slate-800 text-xs font-semibold uppercase tracking-wider">
-              <Shield className="w-4 h-4 text-slate-700" aria-hidden="true" />
-              <span>Transparencia y Confidencialidad</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vortice-100 text-vortice-900 text-xs font-semibold uppercase tracking-wider">
+              <Shield className="w-4 h-4 text-emerald-600" aria-hidden="true" />
+              <span>Confidencialidad y Experiencia de Campo</span>
             </div>
 
-            <h2 id="cases-heading" className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+            <h2 id="cases-heading" className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
               Casos de estudio y experiencias de campo
             </h2>
 
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Trabajamos con empresas bajo estrictos acuerdos de confidencialidad en Chile. En este espacio publicaremos bitácoras y aprendizajes reales una vez que concluyan los ciclos de acompañamiento activos, respetando el resguardo comercial de cada organización.
+            <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+              En Vórtice operamos bajo estrictos acuerdos de confidencialidad (NDA) con organizaciones de misión crítica en industrias como HealthTech, FinTech y servicios esenciales. Por respeto a nuestros clientes, no publicamos logos comerciales ni métricas ficticias con fines publicitarios.
             </p>
+          </div>
 
-            <div className="pt-2 p-4 bg-white/80 border border-slate-200 rounded-xl text-xs text-slate-500 font-mono text-center">
-              [PLACEHOLDER: insertar casos reales cuando existan. NO inventar testimonios, cifras ni logos de clientes]
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-5xl mx-auto">
+            <div className="bg-white p-6 rounded-2xl border border-slate-200 space-y-2">
+              <h3 className="font-bold text-slate-900 text-sm">
+                Creación de áreas de QA desde cero
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Estructuración de procesos de testing, diseño de roles y escalamiento de células técnicas desde 2 hasta 10 especialistas con trazabilidad total.
+              </p>
             </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-slate-200 space-y-2">
+              <h3 className="font-bold text-slate-900 text-sm">
+                Protocolos Go/No-Go y mitigación de riesgo
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Matrices de prueba E2E y acuerdos de entrega previa a producción que reducen incidentes graves y evitan despliegues de fin de semana con desgaste.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-slate-200 space-y-2">
+              <h3 className="font-bold text-slate-900 text-sm">
+                Integración sistémica TI y Operaciones
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Marcos de trabajo donde comités de dirección, ingeniería y áreas usuarias toman decisiones compartidas con visibilidad técnica confiable.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center text-xs text-slate-500 max-w-xl mx-auto">
+            Las bitácoras detalladas y aprendizajes anonimizados se publicarán en este espacio conforme concluyan los ciclos activos de acompañamiento.
           </div>
         </div>
       </section>

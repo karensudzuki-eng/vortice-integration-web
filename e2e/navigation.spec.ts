@@ -27,9 +27,9 @@ test.describe("Navegación del sitio Vórtice Integration", () => {
     // Bloque de enfoque en 3 ideas sin jerga
     await expect(page.getByText(/Nuestro enfoque en tres ideas simples/i)).toBeVisible();
 
-    // Bloque de casos (placeholder transparente)
+    // Bloque de casos (con política de confidencialidad real)
     await expect(page.getByText(/Casos de estudio y experiencias de campo/i)).toBeVisible();
-    await expect(page.getByText(/insertar casos reales cuando existan/i)).toBeVisible();
+    await expect(page.getByText(/En Vórtice operamos bajo estrictos acuerdos de confidencialidad/i)).toBeVisible();
 
     // Regla de negocio: consteladores.cl jamás debe figurar
     const content = await page.content();
@@ -50,9 +50,10 @@ test.describe("Navegación del sitio Vórtice Integration", () => {
       page.getByText(/La tecnología es la vía para entrar al mundo corporativo y conectar con lo humano/i)
     ).toBeVisible();
 
-    // Placeholder biografía
+    // Biografía real de la fundadora
     await expect(page.getByText(/Detrás del marco Vórtice/i)).toBeVisible();
-    await expect(page.getByText(/Foto profesional de la fundadora/i)).toBeVisible();
+    await expect(page.getByText(/Karen Sudzuki Toro/i)).toBeVisible();
+    await expect(page.getByAltText(/Karen Sudzuki Toro/i)).toBeVisible();
 
     const content = await page.content();
     expect(content.toLowerCase()).not.toContain("consteladores.cl");
@@ -97,11 +98,17 @@ test.describe("Navegación del sitio Vórtice Integration", () => {
       })
     ).toBeVisible();
 
-    // Placeholder de calendario y correo
+    // Calendario real, correo y WhatsApp
     await expect(
       page.locator("#main-content").getByText(/contacto@vorticeintegration.com/i)
     ).toBeVisible();
-    await expect(page.getByText(/Embed de Calendly \/ Cal\.com/i)).toBeVisible();
+    await expect(
+      page.locator("#main-content").getByText(/karen.sudzuki@vorticeintegration.com/i)
+    ).toBeVisible();
+    await expect(
+      page.locator("#main-content").getByText(/\+56 9 4193 9361/i)
+    ).toBeVisible();
+    await expect(page.getByText(/Google Calendar • Diagnóstico Vórtice/i)).toBeVisible();
   });
 
   test("Navega hacia 'Blog' (/blog - Fase 2)", async ({ page }) => {

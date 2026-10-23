@@ -151,16 +151,16 @@ export function LeadForm({
               Si prefieres asegurar de inmediato tu bloque de 45 minutos en agenda para el diagnóstico, puedes seleccionar el horario directamente aquí:
             </p>
             <a
-              href="https://calendar.google.com"
+              href="https://calendar.app.google/8JfEzcRHRZGKMaHx9"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-lg bg-vortice-900 text-white hover:bg-vortice-800 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-vortice-700"
             >
-              <span>Abrir agenda de disponibilidad [PLACEHOLDER]</span>
+              <span>Abrir agenda de disponibilidad directa</span>
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
             <p className="text-xs text-slate-500 text-center">
-              (Enlace de Calendly / Cal.com configurable por la fundadora)
+              Coordinación directa con Karen Sudzuki Toro en Google Calendar
             </p>
           </div>
         )}

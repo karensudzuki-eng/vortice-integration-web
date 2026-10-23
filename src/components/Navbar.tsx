@@ -38,7 +38,7 @@ export function Navbar() {
         <Link
           href="/"
           className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-vortice-700 rounded-md p-1"
-          aria-label="Vórtice Integration SpA - Página de inicio"
+          aria-label="Vórtice Integration Holding SpA - Página de inicio"
         >
           <div className="w-10 h-10 rounded-lg bg-vortice-900 text-white flex items-center justify-center font-bold text-xl tracking-tight transition-transform group-hover:scale-105">
             V
@@ -48,7 +48,7 @@ export function Navbar() {
               VÓRTICE
             </span>
             <span className="text-xs tracking-wider text-vortice-600 font-medium uppercase mt-0.5">
-              Integration SpA
+              Integration Holding SpA
             </span>
           </div>
         </Link>

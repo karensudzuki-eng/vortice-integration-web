@@ -1,5 +1,5 @@
 -- ==============================================================
--- VÓRTICE INTEGRATION SpA - Esquema de Base de Datos (Supabase)
+-- VÓRTICE INTEGRATION HOLDING SpA - Esquema de Base de Datos (Supabase)
 -- Tabla de leads calificados para Diagnóstico y Acompañamiento
 -- ==============================================================
 
