@@ -1,194 +1,233 @@
 import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Precios",
+  title: "Precios & Planes | Vórtice Integration",
   description:
-    "Precios claros de puesta en marcha de QA y soporte mensual para empresas medianas y pymes en Chile. Empiezas con un levantamiento gratuito.",
+    "Precios transparentes de puesta en marcha de QA y soporte mensual para empresas medianas y PyMEs en Chile. Empiezas con un levantamiento gratuito.",
   openGraph: {
-    title: "Precios de QA | Vórtice Integration",
+    title: "Precios y Planes de QA | Vórtice Integration",
     description:
-      "Planes transparentes: Levantamiento gratuito $0 USD, Puesta en marcha desde 4.000 USD + IVA y Soporte mensual desde 1.000 USD + IVA. Precio especial pymes.",
+      "Planes transparentes: Levantamiento gratuito $0 USD, Puesta en marcha desde $3.400 USD + IVA y Soporte mensual desde $850 USD + IVA. Equivalencias en UF y CLP.",
   },
 };
 
 export default function PreciosPage() {
   return (
-    <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-20">
+    <div className="w-full bg-qa-canvas min-h-screen">
       {/* Cabecera */}
-      <section className="pt-8 sm:pt-12 space-y-4 max-w-3xl">
-        <div className="inline-flex items-center gap-2 bg-mint text-dark text-xs font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-tag">
-          <span>Inversión transparente</span>
+      <section className="bg-qa-dark text-white py-16 px-6 border-b border-qa-dark">
+        <div className="max-w-6xl mx-auto space-y-4">
+          <span className="font-mono text-xs text-qa-blue uppercase tracking-widest block font-bold">
+            // Transparencia Total
+          </span>
+          <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight uppercase leading-none">
+            Precios y Planes de Inversión
+          </h1>
+          <p className="text-gray-400 text-lg max-w-2xl font-sans leading-relaxed">
+            Sin presupuestos inflados ni costos ocultos. Empiezas siempre con la sesión técnica gratuita de 30 minutos y tú decides si avanzar.
+          </p>
         </div>
-
-        <h1 className="font-display text-5xl sm:text-7xl text-dark tracking-tight uppercase leading-tightest">
-          Precios
-        </h1>
-
-        <p className="text-lg text-slate leading-relaxed">
-          Sin cotizaciones infinitas ni costos ocultos. Empiezas siempre con el levantamiento gratuito y tú decides si avanzar a la puesta en marcha.
-        </p>
       </section>
 
-      {/* Tarjetas de Precios */}
-      <section className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* 1. Levantamiento */}
-          <div className="bg-white rounded-32 p-6 sm:p-8 space-y-6 border border-ash/30 flex flex-col justify-between">
+      {/* Planes */}
+      <section className="max-w-6xl mx-auto py-16 px-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+          <span className="font-mono text-xs text-qa-blue font-bold uppercase">
+            // Planes adaptados al mercado chileno (Valores netos + IVA)
+          </span>
+          <span className="bg-qa-menta text-qa-dark font-mono font-bold text-xs px-3 py-1.5 border border-qa-dark uppercase">
+            Precio especial para pymes.
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Plan 01 */}
+          <div className="bg-white border-2 border-qa-dark p-8 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:translate-x-1 hover:shadow-[-6px_6px_0px_#0052ff]">
             <div className="space-y-4">
-              <span className="inline-block bg-mint text-dark text-xs font-bold uppercase px-3 py-1 rounded-tag">
-                Sin costo
+              <span className="font-mono text-xs text-qa-blue font-bold uppercase block">
+                Diagnóstico Inicial
               </span>
-              <h2 className="font-display text-3xl text-dark tracking-tight uppercase leading-none">
-                Levantamiento QA
+              <h2 className="text-2xl font-extrabold text-qa-dark">
+                Levantamiento 30 min
               </h2>
               <div>
-                <span className="text-4xl font-extrabold text-dark tracking-tight">$0 USD</span>
-                <span className="text-xs text-smoke block mt-1">Sesión online de 30 minutos</span>
+                <span className="bg-qa-neon text-qa-dark font-mono font-extrabold text-4xl px-2 py-1 inline-block">
+                  $0 USD
+                </span>
+                <span className="block text-xs font-mono text-gray-500 mt-2">
+                  ● 0 UF — Sin costo ni compromiso
+                </span>
               </div>
-              <p className="text-sm text-slate leading-relaxed">
-                Diagnóstico inicial del estado de pruebas de tu software y entrega de informe escrito de 1 a 2 páginas.
+              <p className="text-sm text-gray-700 font-sans leading-relaxed">
+                Evaluación técnica para revisar el estado actual de tu software y definir la estrategia de QA.
               </p>
-              <ul className="text-xs text-slate space-y-2 pt-2 border-t border-canvas">
+              <ul className="text-xs font-mono text-gray-700 space-y-2 pt-4 border-t border-gray-200">
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-dark shrink-0" />
-                  <span>Sin costo ni compromiso</span>
+                  <Check className="w-4 h-4 text-qa-blue shrink-0" />
+                  <span>Sesión online de 30 minutos</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-dark shrink-0" />
+                  <Check className="w-4 h-4 text-qa-blue shrink-0" />
                   <span>Informe escrito en 24h hábiles</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-dark shrink-0" />
+                  <Check className="w-4 h-4 text-qa-blue shrink-0" />
                   <span>Recomendación de primeros pasos</span>
                 </li>
               </ul>
             </div>
 
-            <Link
-              href="/levantamiento"
-              className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-lg bg-dark text-white text-sm font-medium hover:bg-dark/90 transition-colors"
-            >
-              Agendar gratis
-            </Link>
+            <div className="pt-6">
+              <Link
+                href="/levantamiento"
+                className="w-full text-center inline-block bg-qa-dark text-white font-mono font-bold py-3 px-4 text-xs uppercase hover:bg-qa-blue transition-colors"
+              >
+                Agendar Sesión Gratis →
+              </Link>
+            </div>
           </div>
 
-          {/* 2. Puesta en marcha */}
-          <div className="bg-white rounded-32 p-6 sm:p-8 space-y-6 border-2 border-dark flex flex-col justify-between">
+          {/* Plan 02 */}
+          <div className="bg-white border-4 border-qa-blue p-8 flex flex-col justify-between relative shadow-[8px_8px_0px_#0052ff] transition-all duration-200 hover:-translate-y-1 hover:translate-x-1">
+            <span className="absolute -top-4 right-4 bg-qa-blue text-white font-mono text-xs font-bold px-3 py-1 uppercase">
+              Recomendado
+            </span>
             <div className="space-y-4">
-              <span className="inline-block bg-dark text-white text-xs font-bold uppercase px-3 py-1 rounded-tag">
-                Puesta en marcha
+              <span className="font-mono text-xs text-qa-blue font-bold uppercase block">
+                Implementación Base
               </span>
-              <h2 className="font-display text-3xl text-dark tracking-tight uppercase leading-none">
-                QA Básico
+              <h2 className="text-2xl font-extrabold text-qa-dark">
+                Puesta en Marcha
               </h2>
-              <div>
-                <span className="text-xs uppercase text-smoke block">Desde</span>
-                <span className="text-4xl font-extrabold text-dark tracking-tight">4.000 USD</span>
-                <span className="text-xs text-smoke block mt-1">+ IVA (Pymes desde 3.400 USD + IVA)</span>
+              <div className="space-y-2">
+                <div>
+                  <span className="text-xs font-mono text-gray-500 block">Empresas desde</span>
+                  <span className="text-lg font-bold text-gray-800 font-mono">4.000 USD + IVA</span>
+                </div>
+                <div className="pt-1 border-t border-gray-200">
+                  <span className="text-xs font-mono text-qa-blue font-bold block">Precio especial para pymes:</span>
+                  <span className="bg-qa-neon text-qa-dark font-mono font-extrabold text-3xl px-2 py-0.5 inline-block">
+                    $3.400 USD
+                  </span>
+                  <span className="text-xs font-bold text-qa-dark block mt-0.5">+ IVA</span>
+                  <span className="inline-block bg-qa-menta text-qa-dark text-xs font-mono font-bold px-2 py-0.5 mt-1 border border-qa-dark">
+                    Aprox. 85 UF / $3.200.000 CLP
+                  </span>
+                </div>
               </div>
-              <p className="text-sm text-slate leading-relaxed">
-                Estructuración del área e integración en CI en 10 días hábiles.
+              <p className="text-sm text-gray-700 font-sans leading-relaxed">
+                Diseño, configuración de pipeline y automatización de los flujos críticos iniciales de tu plataforma.
               </p>
-              <ul className="text-xs text-slate space-y-2 pt-2 border-t border-canvas">
+              <ul className="text-xs font-mono text-gray-700 space-y-2 pt-4 border-t border-gray-200">
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-dark shrink-0" />
-                  <span>Lineamientos y criterios de calidad</span>
+                  <Check className="w-4 h-4 text-qa-blue shrink-0" />
+                  <span>Plazo de ejecución: 10 días hábiles</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-dark shrink-0" />
-                  <span>Plan y matriz de regresión</span>
+                  <Check className="w-4 h-4 text-qa-blue shrink-0" />
+                  <span>Lineamientos y matriz de regresión</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-dark shrink-0" />
-                  <span>Automatización de flujos críticos</span>
+                  <Check className="w-4 h-4 text-qa-blue shrink-0" />
+                  <span>Automatización E2E en Playwright</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-dark shrink-0" />
-                  <span>Integración en pipeline de CI</span>
+                  <Check className="w-4 h-4 text-qa-blue shrink-0" />
+                  <span>Integración directa en CI/CD</span>
                 </li>
               </ul>
             </div>
 
-            <Link
-              href="/levantamiento"
-              className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-lg bg-dark text-white text-sm font-medium hover:bg-dark/90 transition-colors"
-            >
-              Comenzar con levantamiento
-            </Link>
+            <div className="pt-6">
+              <Link
+                href="/levantamiento"
+                className="w-full text-center inline-block bg-qa-blue text-white font-mono font-bold py-3 px-4 text-xs uppercase hover:shadow-hover-neon transition-all"
+              >
+                Solicitar Cotización →
+              </Link>
+            </div>
           </div>
 
-          {/* 3. Soporte mensual */}
-          <div className="bg-white rounded-32 p-6 sm:p-8 space-y-6 border border-ash/30 flex flex-col justify-between">
+          {/* Plan 03 */}
+          <div className="bg-white border-2 border-qa-dark p-8 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:translate-x-1 hover:shadow-[-6px_6px_0px_#0052ff]">
             <div className="space-y-4">
-              <span className="inline-block bg-canvas text-dark text-xs font-bold uppercase px-3 py-1 rounded-tag">
-                Continuidad
+              <span className="font-mono text-xs text-qa-blue font-bold uppercase block">
+                Continuidad QA
               </span>
-              <h2 className="font-display text-3xl text-dark tracking-tight uppercase leading-none">
+              <h2 className="text-2xl font-extrabold text-qa-dark">
                 Soporte Mensual
               </h2>
-              <div>
-                <span className="text-xs uppercase text-smoke block">Desde</span>
-                <span className="text-4xl font-extrabold text-dark tracking-tight">1.000 USD</span>
-                <span className="text-xs text-smoke block mt-1">+ IVA al mes (Pymes desde 850 USD + IVA)</span>
+              <div className="space-y-2">
+                <div>
+                  <span className="text-xs font-mono text-gray-500 block">Empresas desde</span>
+                  <span className="text-lg font-bold text-gray-800 font-mono">1.000 USD + IVA / mes</span>
+                </div>
+                <div className="pt-1 border-t border-gray-200">
+                  <span className="text-xs font-mono text-qa-blue font-bold block">Precio especial para pymes:</span>
+                  <span className="bg-qa-neon text-qa-dark font-mono font-extrabold text-3xl px-2 py-0.5 inline-block">
+                    $850 USD
+                  </span>
+                  <span className="text-xs font-bold text-qa-dark block mt-0.5">/ mes + IVA</span>
+                  <span className="inline-block bg-qa-menta text-qa-dark text-xs font-mono font-bold px-2 py-0.5 mt-1 border border-qa-dark">
+                    Aprox. 21 UF / $800.000 CLP mes
+                  </span>
+                </div>
               </div>
-              <p className="text-sm text-slate leading-relaxed">
-                20 horas al mes para asegurar que las pruebas sigan corriendo y acompañar los despliegues.
+              <p className="text-sm text-gray-700 font-sans leading-relaxed">
+                Mantenimiento continuo de suites automatizadas, ejecución de pruebas de regresión y soporte técnico.
               </p>
-              <ul className="text-xs text-slate space-y-2 pt-2 border-t border-canvas">
+              <ul className="text-xs font-mono text-gray-700 space-y-2 pt-4 border-t border-gray-200">
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-dark shrink-0" />
+                  <Check className="w-4 h-4 text-qa-blue shrink-0" />
                   <span>20 horas mensuales dedicadas</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-dark shrink-0" />
-                  <span>Mantenimiento de pruebas automatizadas</span>
+                  <Check className="w-4 h-4 text-qa-blue shrink-0" />
+                  <span>Mantenimiento y actualización de scripts</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-dark shrink-0" />
-                  <span>Revisión periódica de cobertura</span>
+                  <Check className="w-4 h-4 text-qa-blue shrink-0" />
+                  <span>Reporte mensual de cobertura y estabilidad</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-dark shrink-0" />
+                  <Check className="w-4 h-4 text-qa-blue shrink-0" />
                   <span>Apoyo técnico en pases a producción</span>
                 </li>
               </ul>
             </div>
 
-            <Link
-              href="/levantamiento"
-              className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-lg bg-dark text-white text-sm font-medium hover:bg-dark/90 transition-colors"
-            >
-              Consultar disponibilidad
-            </Link>
+            <div className="pt-6">
+              <Link
+                href="/levantamiento"
+                className="w-full text-center inline-block bg-qa-dark text-white font-mono font-bold py-3 px-4 text-xs uppercase hover:bg-qa-blue transition-colors"
+              >
+                Contratar Plan Mensual →
+              </Link>
+            </div>
           </div>
-        </div>
-
-        <div className="text-center pt-2">
-          <span className="inline-block bg-mint px-4 py-1.5 rounded-tag text-xs font-semibold text-dark">
-            Precio especial para pymes.
-          </span>
         </div>
       </section>
 
       {/* CTA Final */}
-      <section className="bg-dark text-white rounded-32 p-8 sm:p-12 text-center space-y-5">
-        <h2 className="font-display text-4xl sm:text-6xl text-white uppercase leading-tightest max-w-2xl mx-auto">
-          ¿Tienes dudas sobre cuál plan necesitas?
-        </h2>
-        <p className="text-smoke text-sm sm:text-base max-w-md mx-auto">
-          En los 30 minutos de levantamiento revisamos tu software y te decimos con total franqueza si te conviene contratar o no.
-        </p>
-        <div>
-          <Link
-            href="/levantamiento"
-            className="inline-flex items-center justify-center gap-2 bg-white text-dark text-sm font-semibold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors"
-          >
-            <span>Agendar levantamiento gratuito</span>
-            <ArrowRight className="w-4 h-4 text-dark" aria-hidden="true" />
-          </Link>
+      <section className="bg-qa-dark text-white py-16 px-6 text-center">
+        <div className="max-w-4xl mx-auto space-y-4">
+          <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight uppercase leading-none">
+            ¿Tienes dudas técnicas sobre la implementación?
+          </h2>
+          <p className="text-gray-400 text-sm sm:text-base max-w-lg mx-auto font-sans">
+            En los 30 minutos de levantamiento revisamos tu arquitectura de software y te entregamos un diagnóstico claro.
+          </p>
+          <div className="pt-2">
+            <Link
+              href="/levantamiento"
+              className="inline-block bg-qa-blue text-white px-8 py-3.5 font-bold font-mono text-sm uppercase tracking-wider hover:shadow-hover-neon transition-all"
+            >
+              Agendar levantamiento gratuito →
+            </Link>
+          </div>
         </div>
       </section>
     </div>

@@ -9,36 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: "#e5e5e5",
-        card: "#ffffff",
-        dark: "#000000",
-        slate: {
-          DEFAULT: "#444444",
-          light: "#717171",
-        },
-        smoke: "#979797",
-        ash: "#c6c6c6",
-        mint: {
-          DEFAULT: "#d1ffca",
-          hover: "#bbf7b1",
-        },
-        voltage: "#fff100",
+        "qa-canvas": "#f8f9fa", // Off-white técnico
+        "qa-dark": "#0b0f19", // Azul noche / Negro cibernético
+        "qa-blue": "#0052ff", // Azul eléctrico primario
+        "qa-neon": "#fff100", // Amarillo neón resaltador
+        "qa-menta": "#d1ffca", // Verde menta chips/badges
       },
       fontFamily: {
+        mono: ["JetBrains Mono", "Courier New", "Courier", "monospace"],
         display: ["var(--font-display)", "Bebas Neue", "Anton", "Impact", "sans-serif"],
         sans: ["var(--font-sans)", "Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
-      borderRadius: {
-        pill: "48px",
-        tag: "64px",
-        "28": "28px",
-        "32": "32px",
-      },
-      lineHeight: {
-        tightest: "0.9",
-      },
-      maxWidth: {
-        showroom: "1200px",
+      boxShadow: {
+        "brutal-blue": "6px 6px 0px #0052ff",
+        "brutal-dark": "6px 6px 0px #0b0f19",
+        "hover-neon": "4px 4px 0px #fff100",
       },
     },
   },

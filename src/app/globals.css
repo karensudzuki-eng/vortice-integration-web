@@ -3,14 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --canvas-bg: #e5e5e5;
-  --text-dark: #000000;
-  --text-body: #444444;
+  --canvas-bg: #f8f9fa;
+  --dark-bg: #0b0f19;
+  --blue-primary: #0052ff;
+  --neon-yellow: #fff100;
+  --menta-green: #d1ffca;
 }
 
 body {
-  color: var(--text-body);
-  background-color: var(--canvas-bg);
+  color: #0b0f19;
+  background-color: #f8f9fa;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,14 +20,27 @@ body {
 }
 
 ::selection {
-  background-color: #d1ffca;
-  color: #000000;
+  background-color: #fff100;
+  color: #0b0f19;
 }
 
 /* Enfoque accesible */
 :focus-visible {
-  outline: 2px solid #000000;
+  outline: 2px solid #0052ff;
   outline-offset: 2px;
+}
+
+/* Regla estricta para prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
 }
 
 /* Screen readers */

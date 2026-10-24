@@ -22,34 +22,39 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-4 z-50 w-full px-4 sm:px-6">
-      <div className="max-w-[1200px] mx-auto flex items-center justify-between">
-        {/* Barra flotante tipo píldora */}
+    <header className="sticky top-0 z-50 w-full bg-qa-dark text-white border-b-2 border-gray-800">
+      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+        {/* Marca / Logo */}
+        <Link
+          href="/"
+          className="flex items-center gap-2 group focus:outline-none"
+          aria-label="Vórtice Integration - Inicio"
+        >
+          <span className="font-mono text-2xl font-black tracking-tighter text-white group-hover:text-qa-blue transition-colors">
+            VÓRTICE<span className="text-qa-blue">_</span>
+          </span>
+          <span className="hidden sm:inline-block font-mono text-xs text-gray-400 border-l border-gray-700 pl-2 ml-1 uppercase tracking-wider">
+            QA Automation
+          </span>
+        </Link>
+
+        {/* Navegación (visible en desktop y mobile con toggle) */}
         <nav
           aria-label="Navegación principal"
-          className="w-full bg-white rounded-pill px-5 sm:px-7 py-3 flex items-center justify-between border border-ash/40"
+          className="flex items-center"
         >
-          {/* Logo / Marca */}
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-dark font-display text-2xl sm:text-3xl tracking-tight leading-none focus:outline-none"
-            aria-label="Vórtice Integration - Inicio"
-          >
-            <span>VÓRTICE</span>
-          </Link>
-
           {/* Enlaces escritorio */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center space-x-8 text-sm font-mono">
             {navLinks.map((link) => {
               const active = isActive(link.href);
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors focus:outline-none ${
+                  className={`transition-colors hover:text-qa-blue ${
                     active
-                      ? "text-dark font-bold underline decoration-2 underline-offset-4"
-                      : "text-slate hover:text-dark"
+                      ? "text-qa-neon font-bold border-b-2 border-qa-neon pb-1"
+                      : "text-gray-300"
                   }`}
                 >
                   {link.label}
@@ -58,50 +63,53 @@ export function Navbar() {
             })}
           </div>
 
-          {/* Botón CTA y Menú móvil */}
-          <div className="flex items-center gap-3">
-            <Link
-              href="/levantamiento"
-              className="hidden sm:inline-flex items-center justify-center bg-dark text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-dark/90 transition-colors focus:outline-none"
-            >
-              Agendar 30 min
-            </Link>
-
+          {/* Botón móvil dentro de nav para mantener landmark visible */}
+          <div className="md:hidden flex items-center">
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-dark focus:outline-none"
+              className="p-2 text-white hover:text-qa-blue focus:outline-none"
               aria-expanded={isOpen}
               aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </nav>
+
+        {/* CTA Escritorio */}
+        <div className="hidden sm:flex items-center">
+          <Link
+            href="/levantamiento"
+            className="inline-block bg-qa-blue text-white px-5 py-2.5 font-bold font-mono text-xs uppercase tracking-wider transition-all duration-150 transform hover:-translate-y-0.5 active:translate-y-0 border border-qa-blue hover:shadow-[3px_3px_0px_#fff100]"
+          >
+            Agendar 30 min →
+          </Link>
+        </div>
       </div>
 
-      {/* Desplegable móvil */}
+      {/* Menú móvil desplegable */}
       {isOpen && (
-        <div className="md:hidden max-w-[1200px] mx-auto mt-2 bg-white rounded-3xl p-5 border border-ash/40 space-y-3">
+        <div className="md:hidden bg-qa-dark border-t border-gray-800 px-6 py-4 space-y-3 font-mono">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className={`block py-2 text-base font-medium ${
-                isActive(link.href) ? "text-dark font-bold" : "text-slate"
+              className={`block py-2 text-base ${
+                isActive(link.href) ? "text-qa-neon font-bold" : "text-gray-300"
               }`}
             >
-              {link.label}
+              &gt; {link.label}
             </Link>
           ))}
-          <div className="pt-2 border-t border-canvas">
+          <div className="pt-2 border-t border-gray-800">
             <Link
               href="/levantamiento"
               onClick={() => setIsOpen(false)}
-              className="w-full inline-flex items-center justify-center bg-dark text-white text-base font-medium py-3 rounded-lg"
+              className="w-full text-center inline-block bg-qa-blue text-white py-3 font-bold text-sm uppercase tracking-wider"
             >
-              Agendar levantamiento de 30 min
+              Agendar levantamiento de 30 min →
             </Link>
           </div>
         </div>
