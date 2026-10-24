@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import { WaveDivider } from "@/components/WaveDivider";
+import { HeroStats } from "@/components/HeroStats";
+import { PricingCards } from "@/components/PricingCards";
 
 export const metadata: Metadata = {
   title: "Vórtice Integration | Puesta en marcha de QA para empresas medianas en Chile",
@@ -85,25 +87,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* CINTA DE MÉTRICAS & AUTORIDAD VISUAL */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-white/10">
-            <div className="glass-card p-5 rounded-xl space-y-1 border border-white/10 hover:border-qa-gold/30 transition-colors">
-              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">10 Días</div>
-              <p className="text-xs text-gray-400 font-medium">Puesta en marcha básica</p>
-            </div>
-            <div className="glass-card p-5 rounded-xl space-y-1 border border-white/10 hover:border-qa-gold/30 transition-colors">
-              <div className="text-2xl sm:text-3xl font-extrabold text-qa-gold font-mono">0 Fallas</div>
-              <p className="text-xs text-gray-400 font-medium">En checkout y flujos críticos</p>
-            </div>
-            <div className="glass-card p-5 rounded-xl space-y-1 border border-white/10 hover:border-qa-gold/30 transition-colors">
-              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">1 a 2 Pág.</div>
-              <p className="text-xs text-gray-400 font-medium">Informe entregado en 24h</p>
-            </div>
-            <div className="glass-card p-5 rounded-xl space-y-1 border border-white/10 hover:border-qa-gold/30 transition-colors">
-              <div className="text-2xl sm:text-3xl font-extrabold text-qa-gold-light font-mono">CI/CD</div>
-              <p className="text-xs text-gray-400 font-medium">Playwright en tu repositorio</p>
-            </div>
-          </div>
+          {/* CINTA DE MÉTRICAS & AUTORIDAD VISUAL CON CONTADOR ANIMADO */}
+          <HeroStats />
 
           {/* DOS CAMINOS VISIBLES: SOFTWARE EN PRODUCCIÓN vs. E-COMMERCE */}
           <div className="pt-8 border-t border-white/10" aria-labelledby="paths-heading">
@@ -335,91 +320,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Paso 01 */}
-            <div className="glass-card glass-card-hover p-7 rounded-xl space-y-5 flex flex-col justify-between border border-white/10">
-              <div className="space-y-3">
-                <span className="text-xs font-mono font-bold text-qa-gold uppercase">
-                  Paso 01 · 30 minutos
-                </span>
-                <h3 className="text-xl font-bold text-white">
-                  Levantamiento Técnico Gratuito
-                </h3>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  Sesión online de 30 minutos para analizar tu software, tu stack y tus cuellos de botella. Entregamos un informe escrito de 1 a 2 páginas con diagnóstico y recomendaciones en 24h hábiles.
-                </p>
-                <div className="pt-2 text-xs font-mono text-gray-300">
-                  Inversión: <span className="text-white font-bold">$0 CLP</span> · Sin costo ni compromiso.
-                </div>
-              </div>
-
-              <div className="pt-4">
-                <Link
-                  href="/levantamiento"
-                  className="w-full text-center block py-2.5 px-4 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-xs font-semibold rounded-lg transition-colors"
-                >
-                  Agendar levantamiento →
-                </Link>
-              </div>
-            </div>
-
-            {/* Paso 02 */}
-            <div className="glass-card glass-card-hover p-7 rounded-xl border border-qa-gold/50 shadow-gold-sm space-y-5 flex flex-col justify-between relative bg-qa-gold/5">
-              <span className="absolute -top-3 right-4 bg-gradient-to-r from-qa-gold to-qa-gold-light text-qa-dark text-[11px] font-mono font-bold px-3 py-0.5 rounded-full shadow-sm uppercase">
-                Principal
-              </span>
-              <div className="space-y-3">
-                <span className="text-xs font-mono font-bold text-qa-gold uppercase">
-                  Paso 02 · 10 días hábiles
-                </span>
-                <h3 className="text-xl font-bold text-white">
-                  Puesta en Marcha de QA
-                </h3>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  Diseñamos los lineamientos de prueba, la matriz de regresión, automatizamos los flujos críticos del negocio y los conectamos directamente a tu pipeline de integración continua (CI).
-                </p>
-                <div className="pt-2 text-xs font-mono text-gray-300">
-                  Inversión: <span className="text-white font-bold">Desde $3.200.000 CLP + IVA</span>
-                </div>
-              </div>
-
-              <div className="pt-4">
-                <Link
-                  href="/levantamiento"
-                  className="w-full text-center block py-2.5 px-4 bg-gradient-to-r from-qa-gold to-qa-gold-light hover:from-qa-gold-light hover:to-qa-gold text-qa-dark text-xs font-bold rounded-lg shadow-gold-sm transition-all"
-                >
-                  Iniciar con levantamiento →
-                </Link>
-              </div>
-            </div>
-
-            {/* Paso 03 */}
-            <div className="glass-card glass-card-hover p-7 rounded-xl space-y-5 flex flex-col justify-between border border-white/10">
-              <div className="space-y-3">
-                <span className="text-xs font-mono font-bold text-qa-gold uppercase">
-                  Paso 03 · Mensual
-                </span>
-                <h3 className="text-xl font-bold text-white">
-                  Soporte Mensual (20 hrs)
-                </h3>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  20 horas mensuales de ingeniería de QA para revisar cobertura de código, mantener suites de prueba actualizadas ante cambios de software y dar apoyo técnico en despliegues.
-                </p>
-                <div className="pt-2 text-xs font-mono text-gray-300">
-                  Inversión: <span className="text-white font-bold">Desde $800.000 CLP + IVA / mes</span>
-                </div>
-              </div>
-
-              <div className="pt-4">
-                <Link
-                  href="/precios"
-                  className="w-full text-center block py-2.5 px-4 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-xs font-semibold rounded-lg transition-colors"
-                >
-                  Ver planes y alcance →
-                </Link>
-              </div>
-            </div>
-          </div>
+          {/* Tarjetas interactivas con halo dorado y gráfico de alcance */}
+          <PricingCards />
         </div>
       </section>
 

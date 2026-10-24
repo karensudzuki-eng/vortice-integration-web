@@ -46,9 +46,27 @@ body::before {
   width: 100vw;
   height: 100vh;
   background: 
-    radial-gradient(circle at 50% 10%, rgba(201, 174, 92, 0.12) 0%, transparent 55%),
-    radial-gradient(circle at 85% 45%, rgba(14, 23, 44, 0.6) 0%, transparent 60%),
-    radial-gradient(circle at 15% 85%, rgba(201, 174, 92, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 50% 10%, rgba(201, 174, 92, 0.14) 0%, transparent 55%),
+    radial-gradient(circle at 85% 45%, rgba(14, 23, 44, 0.7) 0%, transparent 60%),
+    radial-gradient(circle at 15% 85%, rgba(201, 174, 92, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Patrón de cuadrícula técnica y líneas sutiles */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    linear-gradient(to right, rgba(201, 174, 92, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(201, 174, 92, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at 50% 40%, black 30%, transparent 90%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, black 30%, transparent 90%);
   pointer-events: none;
   z-index: -1;
 }
@@ -93,6 +111,36 @@ body::before {
 .text-gold-metallic {
   color: #C9AE5C;
   text-shadow: 0 0 12px rgba(201, 174, 92, 0.3);
+}
+
+/* Tarjeta con borde degradado dorado que se ilumina al hover */
+.card-border-gold-glow {
+  position: relative;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, rgba(201, 174, 92, 0.3) 0%, rgba(30, 46, 78, 0.4) 50%, rgba(201, 174, 92, 0.12) 100%);
+  padding: 1px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-border-gold-glow:hover {
+  background: linear-gradient(180deg, rgba(224, 200, 120, 0.95) 0%, rgba(201, 174, 92, 0.7) 50%, rgba(151, 127, 55, 0.45) 100%);
+  box-shadow: 0 0 35px -5px rgba(201, 174, 92, 0.32);
+  transform: translateY(-4px);
+}
+
+.card-border-gold-glow > .card-inner {
+  background: linear-gradient(180deg, #0d1527 0%, #060a14 100%);
+  border-radius: calc(1rem - 1px);
+  height: 100%;
+}
+
+/* Halo radial dorado para destacar componentes clave */
+.gold-radial-halo {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(201, 174, 92, 0.18) 0%, rgba(201, 174, 92, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
 }
 
 /* Regla estricta para prefers-reduced-motion */
