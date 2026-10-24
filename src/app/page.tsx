@@ -16,9 +16,17 @@ import {
   Server
 } from "lucide-react";
 import { HeroOrbit } from "@/components/HeroOrbit";
-import { WaveDivider } from "@/components/WaveDivider";
+import { GlowDivider } from "@/components/GlowDivider";
 import { HeroStats } from "@/components/HeroStats";
 import { PricingCards } from "@/components/PricingCards";
+import { CiPipelineDiagram } from "@/components/CiPipelineDiagram";
+import {
+  IconBugRegression,
+  IconManualRush,
+  IconCoverageBlindspot,
+  IconFitCheck,
+  IconFitCross,
+} from "@/components/icons/GoldIcons";
 
 export const metadata: Metadata = {
   title: "Vórtice Integration | Puesta en marcha de QA para empresas medianas en Chile",
@@ -168,8 +176,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SEPARADOR ONDULADO DE TRANSICIÓN BAJO EL HERO */}
-      <WaveDivider fillColor="#080e1a" />
+      {/* SEPARADOR BRILLANTE BAJO EL HERO */}
+      <GlowDivider label="DIAGNÓSTICO" />
 
       {/* SECCIÓN 2: PROBLEMAS HABITUALES (DOLORES DE NEGOCIO / NEUROMARKETING) */}
       <section className="py-20 sm:py-24 px-4 sm:px-6 bg-[#080e1a] relative" aria-labelledby="pain-heading">
@@ -191,7 +199,9 @@ export default function HomePage() {
             <div className="glass-card glass-card-hover p-7 rounded-xl space-y-4 border-t-2 border-t-qa-gold">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-2xl font-bold text-qa-gold">01</span>
-                <AlertTriangle className="w-5 h-5 text-qa-gold" />
+                <div className="p-2 rounded-lg bg-qa-gold/15 border border-qa-gold/30">
+                  <IconBugRegression size={24} />
+                </div>
               </div>
               <h3 className="text-lg font-bold text-white">
                 Bugs después de cada despliegue
@@ -205,7 +215,9 @@ export default function HomePage() {
             <div className="glass-card glass-card-hover p-7 rounded-xl space-y-4 border-t-2 border-t-qa-gold/80">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-2xl font-bold text-qa-gold-light">02</span>
-                <Clock className="w-5 h-5 text-qa-gold-light" />
+                <div className="p-2 rounded-lg bg-qa-gold/15 border border-qa-gold/30">
+                  <IconManualRush size={24} />
+                </div>
               </div>
               <h3 className="text-lg font-bold text-white">
                 Pruebas manuales a última hora
@@ -219,7 +231,9 @@ export default function HomePage() {
             <div className="glass-card glass-card-hover p-7 rounded-xl space-y-4 border-t-2 border-t-qa-gold/60">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-2xl font-bold text-gray-200">03</span>
-                <Layers className="w-5 h-5 text-qa-gold" />
+                <div className="p-2 rounded-lg bg-qa-gold/15 border border-qa-gold/30">
+                  <IconCoverageBlindspot size={24} />
+                </div>
               </div>
               <h3 className="text-lg font-bold text-white">
                 Incertidumbre sobre qué está probado
@@ -232,12 +246,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SEPARADOR ONDULADO */}
-      <WaveDivider flip fillColor="#060a14" />
+      {/* SEPARADOR BRILLANTE */}
+      <GlowDivider label="PIPELINE CI/CD" />
 
-      {/* SECCIÓN 3: DIAGRAMA VISUAL DEL PIPELINE (ARQUITECTURA DE PRUEBAS) */}
+      {/* SECCIÓN 3: DIAGRAMA VISUAL DEL PIPELINE ANIMADO */}
       <section className="py-20 sm:py-24 px-4 sm:px-6 relative bg-qa-dark">
-        <div className="max-w-6xl mx-auto space-y-12">
+        <div className="max-w-6xl mx-auto space-y-10">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="font-mono text-xs text-qa-gold uppercase tracking-widest block font-bold">
               // Arquitectura de Automatización
@@ -250,60 +264,13 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
-            {/* Paso 1 */}
-            <div className="glass-card p-6 rounded-xl border border-white/10 space-y-3 relative hover:border-qa-gold/40 transition-colors">
-              <div className="w-10 h-10 rounded-lg bg-qa-gold/15 text-qa-gold border border-qa-gold/30 flex items-center justify-center">
-                <GitBranch className="w-5 h-5" />
-              </div>
-              <span className="text-[11px] font-mono text-gray-400 uppercase font-semibold">Fase 1</span>
-              <h3 className="text-base font-bold text-white">Pull Request / Commit</h3>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                El desarrollador sube nuevo código al repositorio sin cambiar sus hábitos de trabajo.
-              </p>
-            </div>
-
-            {/* Paso 2 */}
-            <div className="glass-card p-6 rounded-xl border border-white/10 space-y-3 relative hover:border-qa-gold/40 transition-colors">
-              <div className="w-10 h-10 rounded-lg bg-qa-gold/15 text-qa-gold-light border border-qa-gold/30 flex items-center justify-center">
-                <Terminal className="w-5 h-5" />
-              </div>
-              <span className="text-[11px] font-mono text-gray-400 uppercase font-semibold">Fase 2</span>
-              <h3 className="text-base font-bold text-white">Playwright Docker Runner</h3>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                Se ejecutan las suites de prueba E2E de forma aislada y reproducible en contenedores.
-              </p>
-            </div>
-
-            {/* Paso 3 */}
-            <div className="glass-card p-6 rounded-xl border border-white/10 space-y-3 relative hover:border-qa-gold/40 transition-colors">
-              <div className="w-10 h-10 rounded-lg bg-qa-gold/15 text-qa-gold border border-qa-gold/30 flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <span className="text-[11px] font-mono text-gray-400 uppercase font-semibold">Fase 3</span>
-              <h3 className="text-base font-bold text-white">Gatekeeper de Calidad</h3>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                Se validan automáticamente las pasarelas, autenticación y flujos críticos de negocio.
-              </p>
-            </div>
-
-            {/* Paso 4 */}
-            <div className="glass-card p-6 rounded-xl border border-qa-gold/40 space-y-3 relative bg-qa-gold/5 shadow-gold-sm">
-              <div className="w-10 h-10 rounded-lg bg-qa-gold/20 text-qa-gold border border-qa-gold/40 flex items-center justify-center">
-                <CheckCircle2 className="w-5 h-5" />
-              </div>
-              <span className="text-[11px] font-mono text-qa-gold uppercase font-semibold">Fase 4</span>
-              <h3 className="text-base font-bold text-white">Despliegue Seguro</h3>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                El software llega a los usuarios finales con 0 bugs críticos y certeza total del equipo.
-              </p>
-            </div>
-          </div>
+          {/* Diagrama interactivo con línea dibujada y pulso de luz */}
+          <CiPipelineDiagram />
         </div>
       </section>
 
-      {/* SEPARADOR ONDULADO */}
-      <WaveDivider fillColor="#080e1a" />
+      {/* SEPARADOR BRILLANTE */}
+      <GlowDivider label="PLANES DE QA" />
 
       {/* SECCIÓN 4: OFERTA EN TRES PASOS (QUÉ HACEMOS) */}
       <section className="py-20 sm:py-24 px-4 sm:px-6 bg-[#080e1a] border-y border-white/10" aria-labelledby="offer-heading">
@@ -325,8 +292,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SEPARADOR ONDULADO */}
-      <WaveDivider flip fillColor="#060a14" />
+      {/* SEPARADOR BRILLANTE */}
+      <GlowDivider label="CRITERIOS DE ENCAJE" />
 
       {/* SECCIÓN 5: PARA QUIÉN SÍ / PARA QUIÉN NO */}
       <section className="py-20 sm:py-24 px-4 sm:px-6 relative bg-qa-dark" aria-labelledby="fit-heading">
@@ -347,7 +314,9 @@ export default function HomePage() {
             {/* Para quién sí */}
             <div className="glass-card p-8 rounded-xl border border-qa-gold/40 shadow-gold-sm space-y-5">
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-6 h-6 text-qa-gold" aria-hidden="true" />
+                <div className="p-2 rounded-lg bg-qa-gold/15 border border-qa-gold/30">
+                  <IconFitCheck size={24} />
+                </div>
                 <h3 className="text-xl font-bold text-white">Para quién sí</h3>
               </div>
               <ul className="space-y-3.5 text-sm text-gray-300">
@@ -369,7 +338,9 @@ export default function HomePage() {
             {/* Para quién no */}
             <div className="glass-card p-8 rounded-xl border border-white/10 space-y-5">
               <div className="flex items-center gap-3">
-                <XCircle className="w-6 h-6 text-gray-500" aria-hidden="true" />
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                  <IconFitCross size={24} />
+                </div>
                 <h3 className="text-xl font-bold text-white">Para quién no</h3>
               </div>
               <ul className="space-y-3.5 text-sm text-gray-300">
@@ -391,8 +362,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SEPARADOR ONDULADO */}
-      <WaveDivider fillColor="#080e1a" />
+      {/* SEPARADOR BRILLANTE */}
+      <GlowDivider label="METODOLOGÍA VÓRTICE" />
 
       {/* SECCIÓN 6: METODOLOGÍA VÓRTICE (RESUMEN VISUAL) */}
       <section className="py-20 sm:py-24 px-4 sm:px-6 bg-[#080e1a] border-y border-white/10" aria-labelledby="method-heading">
@@ -422,8 +393,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SEPARADOR ONDULADO */}
-      <WaveDivider flip fillColor="#060a14" />
+      {/* SEPARADOR BRILLANTE */}
+      <GlowDivider label="AGENDA TU SESIÓN" />
 
       {/* SECCIÓN 7: CTA FINAL ÚNICO CON ALTO IMPACTO */}
       <section className="py-24 sm:py-32 px-4 sm:px-6 text-center relative bg-qa-dark">

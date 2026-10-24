@@ -1,8 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
-import { ArrowRight, CheckCircle2, Shield, GitCommit, Search, BarChart3 } from "lucide-react";
-import { WaveDivider } from "@/components/WaveDivider";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { GlowDivider } from "@/components/GlowDivider";
+import {
+  IconMethodAudit,
+  IconMethodCritical,
+  IconMethodLoop,
+  IconMethodGovernance,
+} from "@/components/icons/GoldIcons";
 
 export const metadata: Metadata = {
   title: "Metodología Vórtice | La Forma en que Trabajamos",
@@ -22,28 +28,28 @@ export default function MetodologiaPage() {
       titulo: "Diagnóstico de fricción y acuerdos claros",
       descripcion:
         "Analizamos cómo prueba el equipo hoy y establecemos criterios explícitos de aceptación. Se define formalmente qué significa 'aprobado para producción' para evitar discusiones de última hora.",
-      icono: Search,
+      icono: IconMethodAudit,
     },
     {
       numero: "02",
       titulo: "Automatización de flujos críticos",
       descripcion:
         "Priorizamos los flujos neurálgicos del negocio: autenticación, pasarelas de pago y transacciones principales. No automatizamos por rellenar métricas, sino para blindar lo que no puede fallar.",
-      icono: GitCommit,
+      icono: IconMethodCritical,
     },
     {
       numero: "03",
       titulo: "Integración en el flujo continuo (CI/CD)",
       descripcion:
         "Las pruebas se integran al repositorio de código de tus desarrolladores. Se ejecutan automáticamente en cada cambio sin retrasar el ritmo de despliegue ni generar esperas manuales.",
-      icono: Shield,
+      icono: IconMethodLoop,
     },
     {
       numero: "04",
       titulo: "Gobernanza y visibilidad compartida",
       descripcion:
         "Tanto el liderazgo técnico como el equipo de ingeniería tienen visibilidad exacta de la estabilidad del software. La calidad pasa a ser un dato objetivo y medible en cada entrega.",
-      icono: BarChart3,
+      icono: IconMethodGovernance,
     },
   ];
 
@@ -68,8 +74,8 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider fillColor="#080e1a" />
+      {/* Separador brillante */}
+      <GlowDivider label="MARCO VÓRTICE" />
 
       {/* Explicación del Marco */}
       <section className="py-20 px-4 sm:px-6 bg-[#080e1a] border-y border-white/10 space-y-16">
@@ -130,8 +136,8 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider flip fillColor="#060a14" />
+      {/* Separador brillante */}
+      <GlowDivider label="RESULTADOS" />
 
       {/* Resultados de la Metodología */}
       <section className="py-20 px-4 sm:px-6 bg-qa-dark">

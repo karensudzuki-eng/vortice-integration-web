@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { Check, ArrowRight, ShieldCheck, Zap } from "lucide-react";
-import { WaveDivider } from "@/components/WaveDivider";
+import { GlowDivider } from "@/components/GlowDivider";
 import { PricingCards } from "@/components/PricingCards";
 
 export const metadata: Metadata = {
@@ -38,8 +38,8 @@ export default function PreciosPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider fillColor="#080e1a" />
+      {/* Separador brillante */}
+      <GlowDivider label="PLANES EN CLP" />
 
       {/* Planes con halo dorado y gráfico de alcance */}
       <section className="py-20 px-4 sm:px-6 bg-[#080e1a] border-y border-white/10">
@@ -57,8 +57,8 @@ export default function PreciosPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider flip fillColor="#060a14" />
+      {/* Separador brillante */}
+      <GlowDivider label="PREGUNTAS FRECUENTES" />
 
       {/* Preguntas Frecuentes sobre Precios */}
       <section className="py-20 px-4 sm:px-6 bg-qa-dark">

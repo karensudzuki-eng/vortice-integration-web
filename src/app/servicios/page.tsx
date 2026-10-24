@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight, ChevronDown, ExternalLink, Shield, Cpu, Code2, Terminal } from "lucide-react";
 import { TerminalRunner } from "@/components/TerminalRunner";
-import { WaveDivider } from "@/components/WaveDivider";
+import { GlowDivider } from "@/components/GlowDivider";
 
 export const metadata: Metadata = {
   title: "Servicios de QA | Vórtice Integration",
@@ -38,8 +38,8 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider fillColor="#080e1a" />
+      {/* Separador brillante */}
+      <GlowDivider label="OFERTA DE SERVICIOS" />
 
       {/* Grid de Servicios (Lenguaje de Negocio) */}
       <section className="py-20 px-4 sm:px-6 bg-[#080e1a] border-y border-white/10">
@@ -162,8 +162,8 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider flip fillColor="#060a14" />
+      {/* Separador brillante */}
+      <GlowDivider label="CONSOLA DE PRUEBAS" />
 
       {/* CONSOLA DE PRUEBAS ANIMADA (SOLICITADA EXPRESAMENTE EN SERVICIOS) */}
       <section className="py-20 px-4 sm:px-6 relative bg-qa-dark">
@@ -186,8 +186,8 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider fillColor="#080e1a" />
+      {/* Separador brillante */}
+      <GlowDivider label="OFERTA DE SERVICIOS" />
 
       {/* BLOQUE TÉCNICO COLAPSABLE PARA EL EQUIPO DE DESARROLLO */}
       <section className="py-20 px-4 sm:px-6 bg-[#080e1a] border-y border-white/10">
@@ -266,8 +266,8 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider flip fillColor="#060a14" />
+      {/* Separador brillante */}
+      <GlowDivider label="CONSOLA DE PRUEBAS" />
 
       {/* Lo que NO ofrecemos */}
       <section className="py-20 px-4 sm:px-6 bg-qa-dark">

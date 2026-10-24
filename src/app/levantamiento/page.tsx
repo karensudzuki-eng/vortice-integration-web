@@ -2,7 +2,8 @@ import React from "react";
 import { Metadata } from "next";
 import { Calendar, FileText, CheckCircle2 } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
-import { WaveDivider } from "@/components/WaveDivider";
+import { GlowDivider } from "@/components/GlowDivider";
+import { QaReportMockup } from "@/components/QaReportMockup";
 
 export const metadata: Metadata = {
   title: "Levantamiento QA de 30 Minutos | Vórtice Integration",
@@ -48,17 +49,17 @@ export default function LevantamientoPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider fillColor="#080e1a" />
+      {/* Separador brillante */}
+      <GlowDivider label="METODOLOGÍA DE LA SESIÓN" />
 
-      {/* Qué pasa en los 30 minutos + Qué recibe el cliente */}
+      {/* Qué pasa en los 30 minutos + Mockup visual del reporte entregable */}
       <section className="py-20 px-4 sm:px-6 bg-[#080e1a] border-y border-white/10">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mb-16">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Qué pasa en los 30 minutos */}
-            <div className="glass-card rounded-2xl p-8 sm:p-9 space-y-6 border border-white/10">
+            <div className="lg:col-span-5 glass-card rounded-2xl p-7 sm:p-8 space-y-6 border border-white/10">
               <span className="font-mono text-xs text-qa-gold font-bold uppercase block">
-                // Metodología de la sesión
+                // Conversación Técnica Directa
               </span>
               <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                 Qué pasa en los 30 minutos
@@ -73,7 +74,7 @@ export default function LevantamientoPage() {
                   </span>
                   <div>
                     <strong className="text-white block font-mono">Cómo se prueba hoy:</strong>
-                    <span className="text-gray-300">Revisamos el flujo real con el que tu equipo valida antes de desplegar código a producción.</span>
+                    <span className="text-gray-300 text-xs sm:text-sm">Revisamos el flujo real con el que tu equipo valida antes de desplegar código a producción.</span>
                   </div>
                 </li>
 
@@ -83,7 +84,7 @@ export default function LevantamientoPage() {
                   </span>
                   <div>
                     <strong className="text-white block font-mono">Dónde se rompe:</strong>
-                    <span className="text-gray-300">Identificamos los puntos ciegos, los cuellos de botella y los errores recurrentes reportados por usuarios.</span>
+                    <span className="text-gray-300 text-xs sm:text-sm">Identificamos los puntos ciegos, los cuellos de botella y los errores recurrentes reportados por usuarios.</span>
                   </div>
                 </li>
 
@@ -93,55 +94,25 @@ export default function LevantamientoPage() {
                   </span>
                   <div>
                     <strong className="text-white block font-mono">Qué primer paso tiene sentido:</strong>
-                    <span className="text-gray-300">Definimos la prioridad inmediata que entregará estabilidad sin sobrecargar a los desarrolladores.</span>
+                    <span className="text-gray-300 text-xs sm:text-sm">Definimos la prioridad inmediata que entregará estabilidad sin sobrecargar a los desarrolladores.</span>
                   </div>
                 </li>
               </ul>
             </div>
 
-            {/* Qué recibe el cliente después */}
-            <div className="glass-card rounded-2xl p-8 sm:p-9 space-y-6 flex flex-col justify-between border border-qa-gold/30 shadow-gold-sm">
-              <div className="space-y-5">
-                <span className="font-mono text-xs text-qa-gold font-bold uppercase block">
-                  // Entregable tangible en 24h
-                </span>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-qa-gold/15 border border-qa-gold/30 flex items-center justify-center text-qa-gold shrink-0">
-                    <FileText className="w-6 h-6" aria-hidden="true" />
-                  </div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                    Informe escrito de 1 a 2 páginas
-                  </h2>
-                </div>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  Dentro de las 24 horas hábiles posteriores a la sesión, recibirás un informe técnico y ejecutivo que incluye:
-                </p>
-                <ul className="space-y-2.5 text-xs font-mono text-gray-300 pt-2 border-t border-white/10">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-qa-gold shrink-0" />
-                    <span>Diagnóstico objetivo del estado actual de tus pruebas</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-qa-gold shrink-0" />
-                    <span>Matriz de riesgos en los flujos neurálgicos identificados</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-qa-gold shrink-0" />
-                    <span>Hoja de ruta con los primeros pasos de automatización recomendados</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="pt-4 border-t border-white/10 text-xs text-gray-400 font-mono">
-                ● Documento confidencial de libre uso para tu equipo de ingeniería.
-              </div>
+            {/* MOCKUP VISUAL DEL REPORTE DE QA ENTREGABLE */}
+            <div className="lg:col-span-7 space-y-3">
+              <span className="font-mono text-xs text-qa-gold font-bold uppercase tracking-wider block">
+                // Entregable tangible en 24h hábiles
+              </span>
+              <QaReportMockup />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider flip fillColor="#060a14" />
+      {/* Separador brillante */}
+      <GlowDivider label="FORMULARIO DE CONTACTO" />
 
       {/* Formulario de Solicitud */}
       <section className="py-20 px-4 sm:px-6 bg-qa-dark">

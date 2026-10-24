@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight, ExternalLink, ShieldCheck, Layers, Award, CheckCircle2 } from "lucide-react";
-import { WaveDivider } from "@/components/WaveDivider";
+import { GlowDivider } from "@/components/GlowDivider";
 
 export const metadata: Metadata = {
   title: "Quiénes Somos | Vórtice Integration Holding SpA",
@@ -37,8 +37,8 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider fillColor="#080e1a" />
+      {/* Separador brillante */}
+      <GlowDivider label="PROPÓSITO" />
 
       {/* Resumen corporativo (Dos frases clave) */}
       <section className="py-16 px-4 sm:px-6 bg-[#080e1a] border-y border-white/10">
@@ -57,8 +57,8 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider flip fillColor="#060a14" />
+      {/* Separador brillante */}
+      <GlowDivider label="ESTRUCTURA DEL HOLDING" />
 
       {/* Estructura del Grupo: La Matriz y sus Líneas */}
       <section className="py-20 px-4 sm:px-6 bg-qa-dark">

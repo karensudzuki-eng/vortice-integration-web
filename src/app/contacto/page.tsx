@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { Calendar, ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
-import { WaveDivider } from "@/components/WaveDivider";
+import { GlowDivider } from "@/components/GlowDivider";
 
 export const metadata: Metadata = {
   title: "Contacto | Vórtice Integration",
@@ -37,8 +37,8 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider fillColor="#080e1a" />
+      {/* Separador brillante */}
+      <GlowDivider label="CANALES OFICIALES" />
 
       {/* Grid: Formulario + Canales directos */}
       <section className="py-20 px-4 sm:px-6 bg-[#080e1a] border-y border-white/10">
@@ -143,8 +143,8 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      {/* Separador ondulado */}
-      <WaveDivider flip fillColor="#060a14" />
+      {/* Separador brillante */}
+      <GlowDivider label="SANTIAGO DE CHILE" />
     </div>
   );
 }
