@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight, CheckCircle2, Shield, GitCommit, Search, BarChart3 } from "lucide-react";
+import { WaveDivider } from "@/components/WaveDivider";
 
 export const metadata: Metadata = {
   title: "Metodología Vórtice | La Forma en que Trabajamos",
@@ -49,13 +50,13 @@ export default function MetodologiaPage() {
   return (
     <div className="w-full bg-qa-dark text-gray-100 min-h-screen font-sans">
       {/* Cabecera */}
-      <section className="py-20 sm:py-24 px-4 sm:px-6 border-b border-white/10 relative">
+      <section className="py-20 sm:py-24 px-4 sm:px-6 relative">
         <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10" 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[280px] bg-qa-gold/10 rounded-full blur-[130px] pointer-events-none -z-10" 
           aria-hidden="true" 
         />
         <div className="max-w-6xl mx-auto space-y-4">
-          <span className="font-mono text-xs text-qa-cyan uppercase tracking-widest block font-bold">
+          <span className="font-mono text-xs text-qa-gold uppercase tracking-widest block font-bold">
             // Marco de Trabajo Metodológico
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
@@ -67,78 +68,129 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
+      {/* Separador ondulado */}
+      <WaveDivider fillColor="#080e1a" />
+
       {/* Explicación del Marco */}
-      <section className="max-w-6xl mx-auto py-20 px-4 sm:px-6 space-y-16">
-        <div className="glass-card p-8 sm:p-12 rounded-2xl border border-white/10 space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-            ¿Por qué existe el marco Vórtice?
-          </h2>
-          <div className="space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed max-w-3xl">
-            <p>
-              En la mayoría de las empresas medianas con software en producción ocurre el mismo fenómeno: a medida que el producto crece y se agregan funcionalidades, la velocidad de desarrollo se frena porque los desarrolladores dedican gran parte de su tiempo a reparar fallas que ya habían solucionado antes.
-            </p>
-            <p>
-              El marco Vórtice nació para resolver esa fricción operativa. No es una consultoría teórica con documentos extensos que nadie lee, sino un conjunto de acuerdos, matrices de regresión y automatizaciones prácticas que se instalan directamente en el día a día del equipo.
-            </p>
-          </div>
-        </div>
-
-        {/* Los 4 Pilares del Marco */}
-        <div className="space-y-8">
-          <div className="space-y-2">
-            <span className="font-mono text-xs text-qa-cyan uppercase tracking-wider block font-bold">
-              // Principios Operativos
-            </span>
+      <section className="py-20 px-4 sm:px-6 bg-[#080e1a] border-y border-white/10 space-y-16">
+        <div className="max-w-6xl mx-auto space-y-16">
+          <div className="glass-card p-8 sm:p-12 rounded-2xl border border-qa-gold/30 shadow-gold-sm space-y-6">
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              Los 4 pilares de la metodología
+              ¿Por qué existe el marco Vórtice?
             </h2>
+            <div className="space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed max-w-3xl">
+              <p>
+                En la mayoría de las empresas medianas con software en producción ocurre el mismo fenómeno: a medida que el producto crece y se agregan funcionalidades, la velocidad de desarrollo se frena porque los desarrolladores dedican gran parte de su tiempo a reparar fallas que ya habían solucionado antes.
+              </p>
+              <p>
+                El marco Vórtice nació para resolver esa fricción operativa. No es una consultoría teórica con documentos extensos que nadie lee, sino un conjunto de acuerdos, matrices de regresión y automatizaciones prácticas que se instalan directamente en el día a día del equipo.
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {pilares.map((pilar) => {
-              const IconComponent = pilar.icono;
-              return (
-                <div
-                  key={pilar.numero}
-                  className="glass-card glass-card-hover p-8 rounded-2xl space-y-4 border border-white/10"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xl font-bold text-qa-cyan block">
-                      // {pilar.numero}
-                    </span>
-                    <div className="w-10 h-10 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center">
-                      <IconComponent className="w-5 h-5" />
+          {/* Los 4 Pilares del Marco */}
+          <div className="space-y-8">
+            <div className="space-y-2">
+              <span className="font-mono text-xs text-qa-gold uppercase tracking-wider block font-bold">
+                // Principios Operativos
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                Los 4 pilares de la metodología
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {pilares.map((pilar) => {
+                const IconComponent = pilar.icono;
+                return (
+                  <div
+                    key={pilar.numero}
+                    className="glass-card glass-card-hover p-8 rounded-2xl border border-white/10 space-y-4"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="w-12 h-12 rounded-xl bg-qa-gold/15 border border-qa-gold/30 flex items-center justify-center text-qa-gold">
+                        <IconComponent className="w-6 h-6" aria-hidden="true" />
+                      </div>
+                      <span className="font-mono text-2xl font-bold text-qa-gold">
+                        {pilar.numero}
+                      </span>
                     </div>
+
+                    <h3 className="text-lg font-bold text-white">
+                      {pilar.titulo}
+                    </h3>
+                    <p className="text-sm text-gray-300 leading-relaxed">
+                      {pilar.descripcion}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-bold text-white">
-                    {pilar.titulo}
-                  </h3>
-                  <p className="text-sm text-gray-300 leading-relaxed">
-                    {pilar.descripcion}
-                  </p>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* CTA Intermedio */}
-        <div className="glass-card border border-blue-500/40 p-8 sm:p-12 rounded-2xl shadow-glow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="space-y-2 max-w-xl">
-            <h3 className="text-xl font-bold text-white">
-              ¿Quieres evaluar cómo aplica este marco a tu plataforma?
-            </h3>
-            <p className="text-sm text-gray-300">
-              En el levantamiento gratuito de 30 minutos revisamos tu flujo actual y te entregamos un diagnóstico claro.
-            </p>
+      {/* Separador ondulado */}
+      <WaveDivider flip fillColor="#060a14" />
+
+      {/* Resultados de la Metodología */}
+      <section className="py-20 px-4 sm:px-6 bg-qa-dark">
+        <div className="max-w-6xl mx-auto space-y-8">
+          <div className="glass-card p-8 sm:p-12 rounded-2xl border border-qa-gold/40 shadow-gold-sm space-y-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              Qué cambia con el marco Vórtice implementado
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-300 pt-4">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-white font-bold font-mono">
+                  <CheckCircle2 className="w-5 h-5 text-qa-gold shrink-0" />
+                  <span>Despliegues sin miedo</span>
+                </div>
+                <p className="text-xs text-gray-400 leading-relaxed">
+                  Los desarrolladores liberan código con la seguridad de que las pruebas automatizadas alertarán cualquier regresión antes de tocar producción.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-white font-bold font-mono">
+                  <CheckCircle2 className="w-5 h-5 text-qa-gold shrink-0" />
+                  <span>Velocidad de entrega</span>
+                </div>
+                <p className="text-xs text-gray-400 leading-relaxed">
+                  Se eliminan los ciclos manuales de verificación de horas o días: el pipeline informa el estado en minutos.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-white font-bold font-mono">
+                  <CheckCircle2 className="w-5 h-5 text-qa-gold shrink-0" />
+                  <span>Tranquilidad del CTO</span>
+                </div>
+                <p className="text-xs text-gray-400 leading-relaxed">
+                  Certeza objetiva sobre qué partes del producto están protegidas y cuáles requieren atención.
+                </p>
+              </div>
+            </div>
           </div>
-          <Link
-            href="/levantamiento"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-7 py-3.5 font-semibold text-sm rounded-lg shadow-glow-sm transition-all shrink-0"
-          >
-            <span>Agendar levantamiento de 30 min</span>
-            <ArrowRight className="w-4 h-4 text-qa-cyan" aria-hidden="true" />
-          </Link>
+
+          {/* CTA */}
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 p-8 glass-card rounded-2xl border border-white/10">
+            <div className="space-y-1">
+              <h3 className="text-base font-bold text-white">
+                ¿Quieres aplicar este marco a tu software?
+              </h3>
+              <p className="text-xs text-gray-400">
+                Inicia con el diagnóstico técnico de 30 minutos sin costo.
+              </p>
+            </div>
+            <Link
+              href="/levantamiento"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-qa-gold to-qa-gold-light hover:from-qa-gold-light hover:to-qa-gold text-qa-dark text-xs font-bold uppercase px-6 py-3 rounded-lg shadow-gold-sm transition-all shrink-0"
+            >
+              <span>Agendar levantamiento →</span>
+              <ArrowRight className="w-4 h-4 text-qa-dark" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </section>
     </div>

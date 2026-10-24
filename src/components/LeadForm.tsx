@@ -92,12 +92,12 @@ export function LeadForm({
         role="status"
         aria-live="polite"
       >
-        <div className="w-14 h-14 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center rounded-full mx-auto shadow-sm">
+        <div className="w-14 h-14 bg-qa-gold/20 text-qa-gold border border-qa-gold/40 flex items-center justify-center rounded-full mx-auto shadow-gold-sm">
           <CheckCircle2 className="w-7 h-7" aria-hidden="true" />
         </div>
 
         <div className="space-y-2">
-          <span className="font-mono text-xs text-qa-cyan font-bold uppercase block">
+          <span className="font-mono text-xs text-qa-gold font-bold uppercase block">
             // Solicitud procesada con éxito
           </span>
           <h3 className="text-2xl font-bold text-white tracking-tight uppercase">
@@ -114,7 +114,7 @@ export function LeadForm({
         {/* Enlace directo a Google Calendar */}
         <div className="bg-[#050912] border border-white/10 p-6 rounded-xl max-w-md mx-auto text-left space-y-3 font-mono">
           <div className="flex items-center gap-2 text-white font-bold text-sm">
-            <Calendar className="w-4 h-4 text-qa-cyan" aria-hidden="true" />
+            <Calendar className="w-4 h-4 text-qa-gold" aria-hidden="true" />
             <span>Paso siguiente opcional:</span>
           </div>
           <p className="text-xs text-gray-400 font-sans">
@@ -124,10 +124,10 @@ export function LeadForm({
             href="https://calendar.app.google/8JfEzcRHRZGKMaHx9"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-semibold uppercase rounded-lg transition-all shadow-glow-sm"
+            className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-qa-gold to-qa-gold-light hover:from-qa-gold-light hover:to-qa-gold text-qa-dark text-xs font-bold uppercase rounded-lg transition-all shadow-gold-sm hover:shadow-gold-md"
           >
             <span>Abrir agenda de disponibilidad</span>
-            <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            <ArrowRight className="w-4 h-4 text-qa-dark" aria-hidden="true" />
           </a>
         </div>
 
@@ -197,7 +197,7 @@ export function LeadForm({
             placeholder="Ej: Carlos Medina"
             value={formData.nombre}
             onChange={handleChange}
-            className="w-full bg-[#050912]/80 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-500 rounded-lg focus:border-qa-cyan focus:ring-1 focus:ring-qa-cyan focus:outline-none transition-all"
+            className="w-full bg-[#050912]/80 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-500 rounded-lg focus:border-qa-gold focus:ring-1 focus:ring-qa-gold focus:outline-none transition-all"
           />
         </div>
 
@@ -218,7 +218,7 @@ export function LeadForm({
               placeholder="Ej: FinTech SpA"
               value={formData.empresa}
               onChange={handleChange}
-              className="w-full bg-[#050912]/80 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-500 rounded-lg focus:border-qa-cyan focus:ring-1 focus:ring-qa-cyan focus:outline-none transition-all"
+              className="w-full bg-[#050912]/80 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-500 rounded-lg focus:border-qa-gold focus:ring-1 focus:ring-qa-gold focus:outline-none transition-all"
             />
           </div>
 
@@ -237,7 +237,7 @@ export function LeadForm({
               placeholder="Ej: CTO / Head of Engineering"
               value={formData.cargo}
               onChange={handleChange}
-              className="w-full bg-[#050912]/80 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-500 rounded-lg focus:border-qa-cyan focus:ring-1 focus:ring-qa-cyan focus:outline-none transition-all"
+              className="w-full bg-[#050912]/80 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-500 rounded-lg focus:border-qa-gold focus:ring-1 focus:ring-qa-gold focus:outline-none transition-all"
             />
           </div>
         </div>
@@ -257,7 +257,7 @@ export function LeadForm({
             placeholder="Ej: Next.js, Node.js, PostgreSQL, AWS, GitHub"
             value={formData.stack}
             onChange={handleChange}
-            className="w-full bg-[#050912]/80 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-500 rounded-lg focus:border-qa-cyan focus:ring-1 focus:ring-qa-cyan focus:outline-none transition-all"
+            className="w-full bg-[#050912]/80 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-500 rounded-lg focus:border-qa-gold focus:ring-1 focus:ring-qa-gold focus:outline-none transition-all"
           />
         </div>
 
@@ -274,7 +274,7 @@ export function LeadForm({
             name="tamano_empresa"
             value={formData.tamano_empresa}
             onChange={handleChange}
-            className="w-full bg-[#050912]/80 border border-white/10 px-4 py-3 text-sm text-white rounded-lg focus:border-qa-cyan focus:ring-1 focus:ring-qa-cyan focus:outline-none transition-all"
+            className="w-full bg-[#050912]/80 border border-white/10 px-4 py-3 text-sm text-white rounded-lg focus:border-qa-gold focus:ring-1 focus:ring-qa-gold focus:outline-none transition-all"
           >
             {tamanoOptions.map((opt) => (
               <option key={opt} value={opt} className="bg-[#0b0f19] text-white">
@@ -300,7 +300,7 @@ export function LeadForm({
             placeholder="Cuéntanos brevemente sobre tu plataforma, si prueban a última hora y qué dolor necesitas resolver."
             value={formData.mensaje}
             onChange={handleChange}
-            className="w-full bg-[#050912]/80 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-500 rounded-lg focus:border-qa-cyan focus:ring-1 focus:ring-qa-cyan focus:outline-none transition-all resize-y"
+            className="w-full bg-[#050912]/80 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-500 rounded-lg focus:border-qa-gold focus:ring-1 focus:ring-qa-gold focus:outline-none transition-all resize-y"
           />
         </div>
       </div>
@@ -308,7 +308,7 @@ export function LeadForm({
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full py-4 px-6 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-sm font-semibold uppercase tracking-wider rounded-lg shadow-glow-sm hover:shadow-glow-md transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full py-4 px-6 bg-gradient-to-r from-qa-gold to-qa-gold-light hover:from-qa-gold-light hover:to-qa-gold text-qa-dark text-sm font-bold uppercase tracking-wider rounded-lg shadow-gold-sm hover:shadow-gold-md transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         <span>
           {status === "submitting" ? "Procesando solicitud..." : "Solicitar levantamiento gratuito →"}

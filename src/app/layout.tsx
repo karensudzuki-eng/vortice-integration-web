@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.vorticeintegration.cl";
 
 export const viewport: Viewport = {
-  themeColor: "#0b0f19",
+  themeColor: "#060a14",
   width: "device-width",
   initialScale: 1,
   minimumScale: 1,
@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   },
   description:
     "Tu software sale a producción sin pruebas sistemáticas: ponemos en marcha tu área de QA en 10 días. Empieza con un levantamiento gratuito de 30 min.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", sizes: "64x64", type: "image/png" },
+    ],
+    apple: "/favicon.png",
+  },
   keywords: [
     "Vórtice Integration",
     "QA Chile",
@@ -52,10 +59,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es-CL" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col bg-qa-dark text-gray-100 antialiased font-sans selection:bg-qa-blue selection:text-white">
+      <body className="min-h-screen flex flex-col bg-qa-dark text-gray-100 antialiased font-sans selection:bg-qa-gold selection:text-qa-dark">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-qa-dark text-white font-mono text-sm border border-qa-blue shadow-tech-accent outline-none"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-qa-dark text-white font-mono text-sm border border-qa-gold shadow-gold-sm outline-none"
         >
           Saltar al contenido principal
         </a>

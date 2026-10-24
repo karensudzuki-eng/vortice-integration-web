@@ -9,21 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Paleta Dark Tech inspirada en HakaLab & Next-Gen QA
-        'qa-dark': '#080c15',
-        'qa-dark-subtle': '#0c121e',
-        'qa-surface': '#111827',
-        'qa-surface-light': '#182234',
-        'qa-border': '#1e293b',
-        'qa-border-light': '#334155',
-        // Acentos eléctricos y gradientes
-        'qa-blue': '#0066ff',
-        'qa-cyan': '#00f0ff',
-        'qa-indigo': '#6366f1',
-        'qa-accent': '#0066ff',
-        'qa-accent-hover': '#2575fc',
-        'qa-accent-glow': 'rgba(0, 102, 255, 0.25)',
-        'qa-emerald': '#10b981',
+        // Fondo: Azul muy oscuro
+        'qa-dark': '#060a14',
+        'qa-navy': '#091020',
+        'qa-navy-surface': '#0e172c',
+        'qa-navy-card': '#13203c',
+        'qa-border': '#1e2e4e',
+        'qa-border-light': '#2a3f68',
+        
+        // UN SOLO ACENTO: Dorado exacto del logo (#C9AE5C)
+        'qa-gold': '#C9AE5C',
+        'qa-gold-light': '#E0C878',
+        'qa-gold-dark': '#977F37',
+        'qa-gold-muted': 'rgba(201, 174, 92, 0.12)',
+        'qa-gold-glow': 'rgba(201, 174, 92, 0.28)',
+
+        // Alias para compatibilidad de componentes
+        'qa-accent': '#C9AE5C',
+        'qa-accent-hover': '#DFCA7E',
+        'qa-blue': '#C9AE5C', // Reemplazado por dorado oficial
+        'qa-cyan': '#C9AE5C', // Reemplazado por dorado oficial
       },
       fontFamily: {
         sans: [
@@ -33,11 +38,6 @@ const config: Config = {
           'BlinkMacSystemFont',
           '"Segoe UI"',
           'Roboto',
-          'sans-serif',
-        ],
-        display: [
-          '"Plus Jakarta Sans"',
-          'system-ui',
           'sans-serif',
         ],
         mono: [
@@ -51,36 +51,40 @@ const config: Config = {
         ],
       },
       boxShadow: {
-        'glow-sm': '0 0 15px -3px rgba(0, 102, 255, 0.3)',
-        'glow-md': '0 0 25px -5px rgba(0, 102, 255, 0.4)',
-        'glow-lg': '0 0 40px -10px rgba(0, 102, 255, 0.5)',
-        'glow-cyan': '0 0 25px -5px rgba(0, 240, 255, 0.35)',
-        'card-glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-tech': 'linear-gradient(135deg, rgba(0, 102, 255, 0.15) 0%, rgba(99, 102, 241, 0.05) 100%)',
-        'gradient-card': 'linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%)',
+        'gold-sm': '0 0 15px -3px rgba(201, 174, 92, 0.3)',
+        'gold-md': '0 0 25px -5px rgba(201, 174, 92, 0.4)',
+        'gold-lg': '0 0 45px -10px rgba(201, 174, 92, 0.5)',
+        'card-glass': '0 8px 32px 0 rgba(0, 0, 0, 0.4)',
       },
       keyframes: {
-        pulseGlow: {
-          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-          '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+        orbitSlow: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
         },
-        float: {
+        counterOrbit: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(-360deg)' },
+        },
+        floatSlow: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-6px)' },
+          '50%': { transform: 'translateY(-8px)' },
         },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
+        goldPulse: {
+          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+          '50%': { opacity: '0.8', transform: 'scale(1.08)' },
+        },
+        revealLine: {
+          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
       animation: {
-        'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
-        'float': 'float 5s ease-in-out infinite',
-        'float-slow': 'float 7s ease-in-out infinite',
-        'shimmer': 'shimmer 3s ease-in-out infinite',
+        'orbit-slow': 'orbitSlow 40s linear infinite',
+        'counter-orbit': 'counterOrbit 40s linear infinite',
+        'float-slow': 'floatSlow 6s ease-in-out infinite',
+        'gold-pulse': 'goldPulse 4s ease-in-out infinite',
+        'reveal-1': 'revealLine 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'reveal-2': 'revealLine 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards',
       },
       screens: {
         'xs': '360px',

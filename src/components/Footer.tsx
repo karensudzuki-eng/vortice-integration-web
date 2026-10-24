@@ -1,19 +1,31 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 
 export function Footer() {
   const currentYear = 2026;
 
   return (
-    <footer className="w-full bg-[#070b13] text-gray-400 border-t border-qa-border pt-16 pb-12 font-sans">
+    <footer className="w-full bg-[#050810] text-gray-400 border-t border-qa-border pt-16 pb-12 font-sans">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
-          {/* Identidad de la Matriz */}
+          {/* Identidad con versión pequeña del logo oficial */}
           <div className="md:col-span-5 space-y-4">
-            <span className="text-xl font-bold tracking-tight text-white block font-mono">
-              VÓRTICE INTEGRATION<span className="text-qa-blue">_</span>
-            </span>
+            <div className="flex items-center gap-3">
+              <div className="relative w-8 h-8 shrink-0 filter drop-shadow-[0_0_6px_rgba(201,174,92,0.3)]">
+                <Image
+                  src="/fenix.png"
+                  alt="Fénix Vórtice Integration"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="text-lg font-bold tracking-tight text-white block font-mono">
+                VÓRTICE INTEGRATION<span className="text-qa-gold">_</span>
+              </span>
+            </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
               Empresa matriz de ingeniería de calidad de software y marcos metodológicos de gestión para empresas con software en producción.
             </p>
@@ -26,37 +38,37 @@ export function Footer() {
 
           {/* Navegación Corporativa */}
           <div className="md:col-span-3 space-y-3 text-sm">
-            <span className="text-xs uppercase tracking-wider text-qa-blue font-bold font-mono block">
+            <span className="text-xs uppercase tracking-wider text-qa-gold font-bold font-mono block">
               // Navegación
             </span>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-qa-gold-light transition-colors">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link href="/servicios" className="hover:text-white transition-colors">
+                <Link href="/servicios" className="hover:text-qa-gold-light transition-colors">
                   Servicios
                 </Link>
               </li>
               <li>
-                <Link href="/metodologia" className="hover:text-white transition-colors">
+                <Link href="/metodologia" className="hover:text-qa-gold-light transition-colors">
                   Metodología Vórtice
                 </Link>
               </li>
               <li>
-                <Link href="/precios" className="hover:text-white transition-colors">
+                <Link href="/precios" className="hover:text-qa-gold-light transition-colors">
                   Precios
                 </Link>
               </li>
               <li>
-                <Link href="/quienes-somos" className="hover:text-white transition-colors">
+                <Link href="/quienes-somos" className="hover:text-qa-gold-light transition-colors">
                   Quiénes somos
                 </Link>
               </li>
               <li>
-                <Link href="/contacto" className="hover:text-white transition-colors">
+                <Link href="/contacto" className="hover:text-qa-gold-light transition-colors">
                   Contacto
                 </Link>
               </li>
@@ -65,16 +77,16 @@ export function Footer() {
 
           {/* Línea de Servicio & Contacto Directo */}
           <div className="md:col-span-4 space-y-4 text-sm">
-            <span className="text-xs uppercase tracking-wider text-qa-blue font-bold font-mono block">
+            <span className="text-xs uppercase tracking-wider text-qa-gold font-bold font-mono block">
               // Canales oficiales
             </span>
 
             {/* Email oficial */}
             <div>
-              <span className="text-xs text-gray-500 block mb-1">Correo institucional:</span>
+              <span className="text-xs text-gray-400 block mb-1">Correo institucional:</span>
               <a
                 href="mailto:contacto@vorticeintegration.com"
-                className="text-white hover:text-qa-blue font-mono text-sm underline decoration-qa-blue/50 underline-offset-4 transition-colors"
+                className="text-white hover:text-qa-gold font-mono text-sm underline decoration-qa-gold/50 underline-offset-4 transition-colors"
               >
                 contacto@vorticeintegration.com
               </a>
@@ -82,12 +94,12 @@ export function Footer() {
 
             {/* WhatsApp oficial */}
             <div>
-              <span className="text-xs text-gray-500 block mb-2">WhatsApp:</span>
+              <span className="text-xs text-gray-400 block mb-2">WhatsApp:</span>
               <a
                 href="https://wa.me/56941939361?text=Hola%20V%C3%B3rtice%20Integration%2C%20me%20gustar%C3%ADa%20coordinar%20un%20levantamiento%20t%C3%A9cnico."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-mono text-gray-300 hover:text-white transition-colors p-2 bg-qa-surface rounded border border-qa-border hover:border-qa-blue"
+                className="inline-flex items-center gap-2 text-xs font-mono text-gray-300 hover:text-white transition-colors p-2.5 bg-qa-navy-surface rounded-lg border border-qa-border hover:border-qa-gold"
                 aria-label="Contactar por WhatsApp"
                 title="Contactar por WhatsApp"
               >
@@ -101,7 +113,7 @@ export function Footer() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden="true"
-                  className="text-qa-blue"
+                  className="text-qa-gold"
                 >
                   <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                 </svg>
@@ -117,7 +129,7 @@ export function Footer() {
                   href="https://qachile.cl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-qa-blue hover:underline"
+                  className="inline-flex items-center gap-1 text-qa-gold hover:underline font-semibold"
                 >
                   <span>[qachile.cl]</span>
                   <ExternalLink className="w-3 h-3" aria-hidden="true" />
