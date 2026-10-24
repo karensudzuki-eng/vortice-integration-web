@@ -10,13 +10,14 @@ export async function POST(request: Request) {
       nombre,
       empresa,
       cargo,
+      stack,
       tamano_empresa,
       mensaje,
       rubro,
       linea_interes,
     } = body;
 
-    // Validación de los campos obligatorios del nuevo formulario
+    // Validación de los campos obligatorios del formulario
     if (
       !nombre?.trim() ||
       !empresa?.trim() ||
@@ -33,7 +34,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const payload = {
+    const payload: Record<string, unknown> = {
       nombre: nombre.trim(),
       empresa: empresa.trim(),
       cargo: cargo.trim(),
@@ -43,6 +44,10 @@ export async function POST(request: Request) {
       linea_interes: linea_interes?.trim() || "Levantamiento QA (30 min)",
       fecha: new Date().toISOString(),
     };
+
+    if (stack?.trim()) {
+      payload.stack = stack.trim();
+    }
 
     const supabase = getSupabaseServerClient();
     let savedLeadId = `lead-${Date.now()}`;
@@ -69,9 +74,7 @@ export async function POST(request: Request) {
         savedLeadId = data.id;
       }
     } else {
-      console.warn(
-        "Supabase en modo demostración local."
-      );
+      console.warn("Supabase en modo demostración local.");
     }
 
     // Webhook n8n
@@ -106,17 +109,18 @@ export async function POST(request: Request) {
         message: "Te respondemos en menos de 24 horas hábiles.",
         data: {
           id: savedLeadId,
-          ...payload,
+          empresa: payload.empresa,
+          fecha: payload.fecha,
         },
       },
       { status: 201 }
     );
   } catch (error) {
-    console.error("Excepción en /api/leads:", error);
+    console.error("Error en POST /api/leads:", error);
     return NextResponse.json(
       {
         success: false,
-        error: "Ocurrió un error inesperado al procesar la solicitud.",
+        error: "Ocurrió un error inesperado al procesar el formulario.",
       },
       { status: 500 }
     );

@@ -1,70 +1,74 @@
 import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, ChevronDown, ExternalLink, Shield, Cpu, Code2, Terminal } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Servicios | Vórtice Integration",
+  title: "Servicios de QA | Vórtice Integration",
   description:
-    "Servicios de QA para empresas medianas y PyMEs en Chile: Levantamiento gratuito de 30 min, puesta en marcha en 10 días y soporte mensual.",
+    "Servicios de calidad de software para empresas medianas en Chile: Levantamiento gratuito de 30 min, puesta en marcha en 10 días y soporte mensual.",
   openGraph: {
     title: "Servicios de QA | Vórtice Integration",
     description:
-      "Levantamiento gratuito de 30 minutos, puesta en marcha de QA básico y soporte mensual continuo para plataformas con software en producción.",
+      "Levantamiento gratuito de 30 minutos, puesta en marcha de QA en 10 días hábiles y soporte mensual continuo para plataformas con software en producción.",
   },
 };
 
 export default function ServiciosPage() {
   return (
-    <div className="w-full bg-qa-canvas min-h-screen">
+    <div className="w-full bg-qa-dark text-gray-100 min-h-screen font-sans">
       {/* Cabecera */}
-      <section className="bg-qa-dark text-white py-16 px-6 border-b border-qa-dark">
+      <section className="py-20 sm:py-24 px-4 sm:px-6 border-b border-white/10 relative">
+        <div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10" 
+          aria-hidden="true" 
+        />
         <div className="max-w-6xl mx-auto space-y-4">
-          <span className="font-mono text-xs text-qa-blue uppercase tracking-widest block font-bold">
+          <span className="font-mono text-xs text-qa-cyan uppercase tracking-widest block font-bold">
             // Oferta de Servicios B2B
           </span>
-          <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight uppercase leading-none">
-            Nuestros Servicios de QA
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Nuestros Servicios de QA para Empresas con Software en Producción
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl font-sans leading-relaxed">
-            Diseñados para empresas medianas (aprox. 30 a 200 personas) que tienen software en producción y necesitan poner en marcha su aseguramiento de calidad sin burocracia ni equipos sobredimensionados.
+          <p className="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+            Diseñados para empresas medianas y pymes (aprox. 30 a 200 personas) que necesitan poner en marcha su aseguramiento de calidad sin burocracia, sin contratar un área pesada y con impacto directo en estabilidad.
           </p>
         </div>
       </section>
 
-      {/* Grid de Servicios */}
-      <section className="max-w-6xl mx-auto py-16 px-6">
+      {/* Grid de Servicios (Lenguaje de Negocio) */}
+      <section className="max-w-6xl mx-auto py-20 px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {/* Servicio 01: Levantamiento */}
-          <div className="bg-white border-2 border-qa-dark p-8 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:translate-x-1 hover:shadow-[-6px_6px_0px_#0052ff]">
+          <div className="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between space-y-6">
             <div className="space-y-4">
-              <span className="font-mono text-xs text-qa-blue font-bold uppercase block">
-                Fase 00 // Sin costo
+              <span className="font-mono text-xs text-qa-cyan font-bold uppercase block">
+                Fase 00 // Diagnóstico
               </span>
-              <h2 className="text-2xl font-extrabold text-qa-dark leading-tight">
-                Levantamiento QA
+              <h2 className="text-2xl font-bold text-white leading-tight">
+                Levantamiento Técnico Gratuito
               </h2>
               <div>
-                <span className="bg-qa-neon text-qa-dark font-mono font-extrabold text-3xl px-2 py-1 inline-block">
-                  $0 USD
+                <span className="text-3xl sm:text-4xl font-extrabold text-white font-mono block">
+                  $0 CLP
                 </span>
-                <span className="block text-xs font-mono text-gray-500 mt-2">
-                  ● 30 minutos • 0 UF • Sin compromiso
+                <span className="text-xs font-mono text-gray-400 mt-1 block">
+                  ● 30 minutos online · Sin compromiso
                 </span>
               </div>
-              <p className="text-sm text-gray-700 leading-relaxed font-sans">
-                Sesión técnica online de 30 minutos donde revisamos el estado de tu software, cómo prueba tu equipo hoy y dónde se generan los cuellos de botella.
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Sesión técnica orientada a líderes de tecnología. Revisamos la arquitectura de tu software, la frecuencia de tus despliegues y dónde se generan los cuellos de botella que provocan fallas.
               </p>
-              <div className="pt-4 border-t border-gray-200 space-y-2 text-xs font-mono text-gray-700">
-                <p className="font-bold text-qa-dark">Entregable en 24h hábiles:</p>
-                <p>&gt; Informe escrito de 1 a 2 páginas con diagnóstico de riesgos y primeros pasos prioritarios.</p>
+              <div className="pt-4 border-t border-white/10 space-y-2 text-xs font-mono text-gray-300">
+                <p className="font-bold text-white">Entregable en 24h hábiles:</p>
+                <p className="text-gray-400">&gt; Informe ejecutivo de 1 a 2 páginas con diagnóstico de riesgos y ruta priorizada.</p>
               </div>
             </div>
 
-            <div className="pt-6">
+            <div className="pt-4">
               <Link
                 href="/levantamiento"
-                className="w-full text-center inline-block bg-qa-dark text-white font-mono font-bold py-3 px-4 text-xs uppercase hover:bg-qa-blue transition-colors"
+                className="w-full text-center block py-3 px-4 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-xs font-semibold rounded-lg transition-colors"
               >
                 Agendar levantamiento →
               </Link>
@@ -72,43 +76,40 @@ export default function ServiciosPage() {
           </div>
 
           {/* Servicio 02: Puesta en marcha */}
-          <div className="bg-white border-4 border-qa-blue p-8 flex flex-col justify-between relative shadow-[6px_6px_0px_#0052ff] transition-all duration-200 hover:-translate-y-1 hover:translate-x-1">
-            <span className="absolute -top-4 right-4 bg-qa-blue text-white font-mono text-xs font-bold px-3 py-1 uppercase">
-              Recomendado
+          <div className="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between space-y-6 border border-blue-500/40 shadow-glow-sm relative">
+            <span className="absolute -top-3.5 right-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[11px] font-mono font-bold px-3 py-0.5 rounded-full uppercase shadow-sm">
+              Principal
             </span>
             <div className="space-y-4">
-              <span className="font-mono text-xs text-qa-blue font-bold uppercase block">
+              <span className="font-mono text-xs text-blue-400 font-bold uppercase block">
                 Fase 01 // 10 Días Hábiles
               </span>
-              <h2 className="text-2xl font-extrabold text-qa-dark leading-tight">
-                Puesta en Marcha QA
+              <h2 className="text-2xl font-bold text-white leading-tight">
+                Puesta en Marcha de QA
               </h2>
               <div>
-                <span className="text-xs font-mono text-gray-500 block">desde</span>
-                <span className="bg-qa-neon text-qa-dark font-mono font-extrabold text-3xl px-2 py-1 inline-block">
-                  $3.400 USD
+                <span className="text-xs font-mono text-gray-400 block">Inversión</span>
+                <span className="text-3xl sm:text-4xl font-extrabold text-white font-mono block">
+                  Desde $3.200.000 CLP
                 </span>
-                <span className="text-xs font-bold text-qa-dark block mt-1">+ IVA (Pymes) / 4.000 USD Empresas</span>
-                <span className="inline-block bg-qa-menta text-qa-dark text-xs font-mono font-bold px-2 py-1 mt-2 border border-qa-dark">
-                  Aprox. 85 UF / $3.200.000 CLP
-                </span>
+                <span className="text-xs text-gray-400 font-mono block mt-0.5">+ IVA (Plazo de 10 días hábiles)</span>
               </div>
-              <p className="text-sm text-gray-700 leading-relaxed font-sans">
-                Estructuración completa del área e integración en CI en 10 días hábiles. Dejamos el flujo funcionando sin frenar a los desarrolladores.
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Instalación completa de un marco de calidad funcional en tu operación. Dejamos las pruebas de los flujos críticos automatizadas e integradas al repositorio para que no dependas de pruebas manuales apresuradas.
               </p>
-              <div className="pt-4 border-t border-gray-200 space-y-1.5 text-xs text-gray-700 font-sans">
-                <p className="font-bold text-qa-dark font-mono">Alcance clave:</p>
-                <p>• Lineamientos y acuerdos de prueba claros</p>
-                <p>• Plan y matriz de regresión continua</p>
-                <p>• Automatización de los flujos críticos (Playwright / k6)</p>
-                <p>• Integración en pipeline de CI/CD</p>
+              <div className="pt-4 border-t border-white/10 space-y-2 text-xs text-gray-300">
+                <p className="font-bold text-white font-mono">Entregables de negocio:</p>
+                <p className="flex items-center gap-1.5">• Lineamientos y acuerdos de prueba para el equipo</p>
+                <p className="flex items-center gap-1.5">• Matriz de regresión continua</p>
+                <p className="flex items-center gap-1.5">• Automatización de los flujos críticos del producto</p>
+                <p className="flex items-center gap-1.5">• Integración en pipeline de CI/CD</p>
               </div>
             </div>
 
-            <div className="pt-6">
+            <div className="pt-4">
               <Link
                 href="/levantamiento"
-                className="w-full text-center inline-block bg-qa-blue text-white font-mono font-bold py-3 px-4 text-xs uppercase hover:shadow-hover-neon transition-all"
+                className="w-full text-center block py-3 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-semibold rounded-lg shadow-glow-sm transition-all"
               >
                 Empezar con levantamiento →
               </Link>
@@ -116,39 +117,36 @@ export default function ServiciosPage() {
           </div>
 
           {/* Servicio 03: Soporte mensual */}
-          <div className="bg-white border-2 border-qa-dark p-8 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:translate-x-1 hover:shadow-[-6px_6px_0px_#0052ff]">
+          <div className="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between space-y-6">
             <div className="space-y-4">
-              <span className="font-mono text-xs text-qa-blue font-bold uppercase block">
+              <span className="font-mono text-xs text-qa-cyan font-bold uppercase block">
                 Fase 02 // Continuidad
               </span>
-              <h2 className="text-2xl font-extrabold text-qa-dark leading-tight">
+              <h2 className="text-2xl font-bold text-white leading-tight">
                 Soporte Mensual (20 hrs)
               </h2>
               <div>
-                <span className="text-xs font-mono text-gray-500 block">desde</span>
-                <span className="bg-qa-neon text-qa-dark font-mono font-extrabold text-3xl px-2 py-1 inline-block">
-                  $850 USD
+                <span className="text-xs font-mono text-gray-400 block">Inversión</span>
+                <span className="text-3xl sm:text-4xl font-extrabold text-white font-mono block">
+                  Desde $800.000 CLP
                 </span>
-                <span className="text-xs font-bold text-qa-dark block mt-1">/ mes + IVA (Pymes) / 1.000 USD Empresas</span>
-                <span className="inline-block bg-qa-menta text-qa-dark text-xs font-mono font-bold px-2 py-1 mt-2 border border-qa-dark">
-                  Aprox. 21 UF / $800.000 CLP mes
-                </span>
+                <span className="text-xs text-gray-400 font-mono block mt-0.5">/ mes + IVA (20 horas mensuales)</span>
               </div>
-              <p className="text-sm text-gray-700 leading-relaxed font-sans">
-                20 horas mensuales de soporte técnico dedicado para mantener suites automatizadas, auditar cobertura y acompañar despliegues críticos.
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Acompañamiento técnico continuo para asegurar que ninguna nueva funcionalidad rompa lo que ya funciona. Mantenimiento de pruebas ante cambios de diseño o lógica y apoyo técnico en despliegues.
               </p>
-              <div className="pt-4 border-t border-gray-200 space-y-1.5 text-xs text-gray-700 font-sans">
-                <p className="font-bold text-qa-dark font-mono">Alcance mensual:</p>
-                <p>• Mantenimiento de scripts de automatización</p>
-                <p>• Auditoría continua de cobertura de código</p>
-                <p>• Soporte técnico y validación en despliegues</p>
+              <div className="pt-4 border-t border-white/10 space-y-2 text-xs text-gray-300">
+                <p className="font-bold text-white font-mono">Alcance operativo:</p>
+                <p className="flex items-center gap-1.5">• Mantenimiento y actualización de scripts</p>
+                <p className="flex items-center gap-1.5">• Auditoría continua de cobertura</p>
+                <p className="flex items-center gap-1.5">• Soporte y validación técnica en despliegues</p>
               </div>
             </div>
 
-            <div className="pt-6">
+            <div className="pt-4">
               <Link
                 href="/levantamiento"
-                className="w-full text-center inline-block bg-qa-dark text-white font-mono font-bold py-3 px-4 text-xs uppercase hover:bg-qa-blue transition-colors"
+                className="w-full text-center inline-block bg-white/10 hover:bg-white/20 border border-white/10 text-white text-xs font-semibold py-3 px-4 rounded-lg transition-colors"
               >
                 Consultar soporte →
               </Link>
@@ -157,40 +155,115 @@ export default function ServiciosPage() {
         </div>
       </section>
 
+      {/* BLOQUE TÉCNICO COLAPSABLE PARA EL EQUIPO DE DESARROLLO */}
+      <section className="max-w-6xl mx-auto pb-20 px-4 sm:px-6">
+        <details className="group glass-card rounded-2xl border border-white/10 overflow-hidden transition-all">
+          <summary className="p-7 flex items-center justify-between cursor-pointer select-none hover:bg-white/5 transition-colors">
+            <div className="space-y-1">
+              <span className="text-xs font-mono text-qa-cyan font-bold uppercase block">
+                // Para el equipo técnico y desarrolladores
+              </span>
+              <h2 className="text-lg sm:text-xl font-bold text-white">
+                Especificaciones Técnicas de la Implementación (CI/CD, Playwright, Arquitectura)
+              </h2>
+            </div>
+            <span className="ml-4 p-2.5 rounded-lg bg-white/10 border border-white/10 text-gray-400 group-open:rotate-180 transition-transform">
+              <ChevronDown className="w-5 h-5 text-qa-cyan" aria-hidden="true" />
+            </span>
+          </summary>
+
+          <div className="p-7 sm:p-9 border-t border-white/10 bg-[#060a12]/80 space-y-6 text-sm text-gray-300 leading-relaxed">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2 glass-card p-6 rounded-xl border border-white/10">
+                <div className="flex items-center gap-2 text-qa-cyan font-mono text-xs font-bold uppercase">
+                  <Terminal className="w-4 h-4" />
+                  <span>1. Stack & Frameworks</span>
+                </div>
+                <h3 className="font-bold text-white text-base">
+                  Playwright (TypeScript) & Containers
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-300">
+                  Implementamos suites E2E basadas en <strong>Playwright (TypeScript)</strong> dockerizadas, garantizando ejecución aislada y reproducible sin dependencias frágiles del entorno local.
+                </p>
+              </div>
+
+              <div className="space-y-2 glass-card p-6 rounded-xl border border-white/10">
+                <div className="flex items-center gap-2 text-blue-400 font-mono text-xs font-bold uppercase">
+                  <Cpu className="w-4 h-4" />
+                  <span>2. Automatización en CI/CD</span>
+                </div>
+                <h3 className="font-bold text-white text-base">
+                  Pipelines Nativos en tu Repositorio
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-300">
+                  Configuración directa en tu proveedor de integración continua (<strong>GitHub Actions, GitLab CI, Bitbucket Pipelines</strong>). Se disparan pruebas automáticas en cada Pull Request o previo a la fusión en ramas principales.
+                </p>
+              </div>
+
+              <div className="space-y-2 glass-card p-6 rounded-xl border border-white/10">
+                <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs font-bold uppercase">
+                  <Code2 className="w-4 h-4" />
+                  <span>3. Matriz de Flujos Críticos</span>
+                </div>
+                <h3 className="font-bold text-white text-base">
+                  Cobertura Neurálgica de Negocio
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-300">
+                  Mapeo exhaustivo de flujos neurálgicos: autenticación y gestión de sesiones, flujos transaccionales, formularios principales, APIs críticas y persistencia de estados.
+                </p>
+              </div>
+
+              <div className="space-y-2 glass-card p-6 rounded-xl border border-white/10">
+                <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs font-bold uppercase">
+                  <Shield className="w-4 h-4" />
+                  <span>4. Gobierno & Trazabilidad</span>
+                </div>
+                <h3 className="font-bold text-white text-base">
+                  Reportes Automáticos de Ejecución
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-300">
+                  Reportes automáticos de ejecución (trazas, screenshots de fallo y videos en Playwright Trace Viewer), entregando visibilidad inmediata a los ingenieros sin fricción operativa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </details>
+      </section>
+
       {/* Lo que NO ofrecemos */}
-      <section className="max-w-6xl mx-auto pb-16 px-6">
-        <div className="bg-white border-2 border-qa-dark p-8 md:p-12 shadow-brutal-dark space-y-6">
-          <span className="font-mono text-xs text-qa-blue uppercase tracking-wider block font-bold">
-            // Criterios de exclusión
+      <section className="max-w-6xl mx-auto pb-24 px-4 sm:px-6">
+        <div className="glass-card border border-white/10 p-8 sm:p-10 rounded-2xl space-y-6">
+          <span className="font-mono text-xs text-gray-400 uppercase tracking-wider block font-bold">
+            // Criterios de exclusión operativa
           </span>
-          <h2 className="text-3xl font-extrabold text-qa-dark tracking-tight uppercase leading-none">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
             Lo que no ofrecemos
           </h2>
-          <p className="text-gray-700 text-sm leading-relaxed max-w-2xl font-sans">
-            Para asegurar calidad y velocidad en cada entrega, no aceptamos proyectos fuera de nuestro foco operativo:
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            Para asegurar velocidad y excelencia en cada proyecto, mantenemos un foco operativo riguroso y no aceptamos proyectos fuera de nuestro alcance:
           </p>
 
-          <div className="space-y-3 font-sans text-sm text-gray-800">
+          <div className="space-y-3 text-sm text-gray-300">
             <div className="flex items-start gap-3">
-              <span className="font-mono text-qa-blue font-bold">&gt;</span>
+              <span className="font-mono text-qa-cyan font-bold">&gt;</span>
               <span><strong>Pruebas de carga y estrés masivas:</strong> No realizamos pruebas destructivas de infraestructura de alta concurrencia.</span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="font-mono text-qa-blue font-bold">&gt;</span>
+              <span className="font-mono text-qa-cyan font-bold">&gt;</span>
               <span><strong>Empresas con área QA propia de más de 5 personas:</strong> Nuestro foco es estructurar e implementar QA donde no existe o está desordenado.</span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="font-mono text-qa-blue font-bold">&gt;</span>
-              <span><strong>Venta de horas para cubrir equipos saturados:</strong> No realizamos subcontratación de horas sueltas ni &quot;body shopping&quot; sin gobierno técnico.</span>
+              <span className="font-mono text-qa-cyan font-bold">&gt;</span>
+              <span><strong>Venta de horas para cubrir equipos saturados:</strong> No realizamos subcontratación de horas sueltas ni &quot;body shopping&quot; sin metodología ni gobierno técnico.</span>
             </div>
           </div>
 
-          <div className="pt-4 border-t border-gray-200 text-xs font-mono text-gray-500">
+          <div className="pt-4 border-t border-white/10 text-xs font-mono text-gray-400">
             <a
               href="https://qachile.cl"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-qa-dark hover:text-qa-blue transition-colors font-bold underline"
+              className="inline-flex items-center gap-1.5 text-qa-cyan hover:text-white transition-colors font-bold underline"
             >
               <span>Para pruebas de carga y estrés, revisa qachile.cl.</span>
               <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />

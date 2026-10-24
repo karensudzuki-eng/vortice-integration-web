@@ -10,6 +10,9 @@ COPY package*.json ./
 # Instalar dependencias exactas
 RUN npm ci
 
+# Asegurar instalación de navegadores compatibles con la versión de Playwright
+RUN npx playwright install --with-deps chromium
+
 # Copiar el código fuente completo
 COPY . .
 

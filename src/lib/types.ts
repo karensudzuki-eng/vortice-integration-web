@@ -8,6 +8,7 @@ export interface LeadSubmission {
   nombre: string;
   empresa: string;
   cargo: string;
+  stack?: string; // Tecnologías, frameworks, repositorio
   tamano_empresa: TeamSize | string;
   mensaje: string; // "¿Qué software tienen y cómo lo prueban hoy?"
   rubro?: string;
